@@ -1,0 +1,425 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-sans);}
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1.2rem;}
+.tab{padding:6px 12px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);font-size:12px;cursor:pointer;background:transparent;color:var(--color-text-secondary);}
+.tab.active{background:var(--color-background-info);color:var(--color-text-info);border-color:transparent;font-weight:500;}
+.sec{display:none;}.sec.active{display:block;}
+
+/* Hero cards */
+.hero{border-radius:var(--border-radius-lg);padding:14px 16px;margin-bottom:12px;}
+.hero.goog{background:linear-gradient(135deg,#0A3D1F 0%,#186F3D 100%);border:0.5px solid #2EAF7D;}
+.hero.nv{background:linear-gradient(135deg,#2E1A00 0%,#76B900 20%,#1A3300 100%);border:0.5px solid #76B900;}
+.hero.ms{background:linear-gradient(135deg,#0D3B6E 0%,#1A5C99 100%);border:0.5px solid #2E86C1;}
+.hero-name{font-size:16px;font-weight:600;color:#fff;margin-bottom:3px;}
+.hero-role{font-size:12px;color:rgba(255,255,255,0.8);margin-bottom:10px;}
+.hero-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.badge{font-size:11px;padding:3px 10px;border-radius:99px;background:rgba(255,255,255,0.18);color:#fff;}
+.score-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.score-chip{background:rgba(255,255,255,0.12);border-radius:var(--border-radius-md);padding:6px 10px;text-align:center;min-width:75px;}
+.score-val{font-size:15px;font-weight:700;color:#fff;}
+.score-lbl{font-size:9px;color:rgba(255,255,255,0.7);margin-top:1px;}
+.why-box{background:rgba(255,255,255,0.1);border-radius:var(--border-radius-md);padding:10px 12px;font-size:12px;color:rgba(255,255,255,0.9);line-height:1.7;}
+.warn-box{background:rgba(255,80,80,0.2);border-radius:var(--border-radius-md);padding:8px 12px;font-size:11px;color:#FFB3B3;margin-top:8px;line-height:1.6;}
+
+/* Rounds */
+.round-card{margin-bottom:8px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;}
+.round-header{padding:10px 14px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--color-background-primary);}
+.round-header:hover{background:var(--color-background-secondary);}
+.rn{font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px;flex-shrink:0;margin-top:1px;}
+.rn-g{background:#D6F0E5;color:#0A3D1F;}
+.rn-n{background:#EDF7D4;color:#3A6000;}
+.rn-m{background:#D6E8F5;color:#0D3B6E;}
+.round-title{font-size:13px;color:var(--color-text-primary);flex:1;}
+.rtog{flex-shrink:0;font-size:16px;color:var(--color-text-tertiary);line-height:1;}
+.round-body{display:none;padding:0 14px 14px;border-top:0.5px solid var(--color-border-tertiary);}
+.round-body.open{display:block;}
+.lbl{font-size:10px;font-weight:500;color:var(--color-text-tertiary);margin:10px 0 5px;letter-spacing:0.04em;}
+.detail{font-size:12px;color:var(--color-text-secondary);line-height:1.75;}
+.tip{margin-top:8px;background:var(--color-background-secondary);padding:9px 12px;border-radius:var(--border-radius-md);font-size:12px;color:var(--color-text-secondary);border-left:2px solid var(--color-border-secondary);line-height:1.65;}
+.verdict{padding:12px 14px;border-radius:var(--border-radius-lg);margin-top:12px;font-size:12px;line-height:1.7;}
+.v-g{background:#E1F5EE;border-left:3px solid #0F6E56;}
+.v-n{background:#F0F9DB;border-left:3px solid #76B900;}
+.v-m{background:#E6F1FB;border-left:3px solid #185FA5;}
+.tag{font-size:11px;padding:2px 7px;border-radius:99px;display:inline-block;margin:2px;}
+.tg{background:#E1F5EE;color:#0F6E56;}
+.tn{background:#EDF7D4;color:#3A6000;}
+.tm{background:#E6F1FB;color:#185FA5;}
+.ta{background:var(--color-background-secondary);color:var(--color-text-secondary);}
+
+/* Week cards */
+.week-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:12px 14px;margin-bottom:8px;background:var(--color-background-primary);}
+.wk-lbl{font-size:10px;font-weight:600;color:var(--color-text-tertiary);letter-spacing:0.05em;margin-bottom:3px;}
+.wk-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;}
+.wk-items{font-size:12px;color:var(--color-text-secondary);line-height:1.85;}
+.wk-items li{list-style:none;padding-left:16px;position:relative;margin-bottom:2px;}
+.wk-items li::before{content:"→";position:absolute;left:0;color:var(--color-text-tertiary);}
+.apply-card{border-left:3px solid currentColor;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:12px 14px;margin-bottom:10px;font-size:12px;color:var(--color-text-secondary);line-height:1.7;border-top:0.5px solid var(--color-border-tertiary);border-right:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary);}
+.apply-card strong{color:var(--color-text-primary);}
+code{font-size:11px;background:var(--color-background-secondary);padding:1px 4px;border-radius:3px;font-family:monospace;}
+.intro{font-size:12px;color:var(--color-text-secondary);padding:10px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);margin-bottom:1rem;line-height:1.6;border-left:2px solid var(--color-border-secondary);}
+.compare-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;}
+.cmp-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:10px 12px;}
+.cmp-title{font-size:11px;font-weight:600;color:var(--color-text-secondary);margin-bottom:8px;letter-spacing:0.03em;}
+.cmp-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:11px;}
+.cmp-row:last-child{border-bottom:none;}
+.cmp-metric{color:var(--color-text-secondary);}
+.cmp-val{font-weight:600;}
+.good{color:#0F6E56;}.mid{color:#854F0B;}.low{color:#A32D2D;}
+.section-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin:14px 0 8px;}
+</style>
+
+<div style="padding:0.9rem 0;">
+<div class="tabs">
+  <button class="tab active" onclick="show('compare',this)">Why These 3</button>
+  <button class="tab" onclick="show('google',this)">Google</button>
+  <button class="tab" onclick="show('nvidia',this)">Nvidia</button>
+  <button class="tab" onclick="show('microsoft',this)">Microsoft</button>
+  <button class="tab" onclick="show('plan',this)">12-Week Plan</button>
+  <button class="tab" onclick="show('apply',this)">Apply Strategy</button>
+</div>
+
+<!-- COMPARE -->
+<div id="compare" class="sec active">
+  <div class="intro">Previous picks were Microsoft, Salesforce, Goldman — optimised purely for technical fit. These three are re-ranked with WLB, perks, culture, and career growth as equal weights alongside profile match. Scores are from live Glassdoor data (India-specific, April–May 2026).</div>
+
+  <div class="compare-row">
+    <div class="cmp-card">
+      <div class="cmp-title">🟢 GOOGLE INDIA</div>
+      <div class="cmp-row"><span class="cmp-metric">WLB</span><span class="cmp-val good">4.4 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Culture</span><span class="cmp-val good">4.5 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Career growth</span><span class="cmp-val good">4.4 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Recommend</span><span class="cmp-val good">92%</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Perks</span><span class="cmp-val good">Best in class</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Profile fit</span><span class="cmp-val good">Vertex AI ✓</span></div>
+    </div>
+    <div class="cmp-card">
+      <div class="cmp-title">🟡 NVIDIA INDIA</div>
+      <div class="cmp-row"><span class="cmp-metric">WLB (Hyd)</span><span class="cmp-val good">4.1 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Culture (Hyd)</span><span class="cmp-val good">4.5 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Career (Hyd)</span><span class="cmp-val good">4.5 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Recommend</span><span class="cmp-val good">93% (Hyd)</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Perks</span><span class="cmp-val good">RSU + unlimited PTO</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Profile fit</span><span class="cmp-val mid">NIM/infra ≈</span></div>
+    </div>
+    <div class="cmp-card">
+      <div class="cmp-title">🔵 MICROSOFT INDIA (HYD)</div>
+      <div class="cmp-row"><span class="cmp-metric">WLB</span><span class="cmp-val mid">4.0 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Culture</span><span class="cmp-val mid">3.9 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Career growth</span><span class="cmp-val mid">3.8 / 5</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Recommend</span><span class="cmp-val mid">78% (Hyd)</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Perks</span><span class="cmp-val mid">Good, reduced since COVID</span></div>
+      <div class="cmp-row"><span class="cmp-metric">Profile fit</span><span class="cmp-val good">Azure AI ✓✓</span></div>
+    </div>
+  </div>
+
+  <div style="font-size:12px;color:var(--color-text-secondary);padding:10px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);margin-bottom:14px;line-height:1.7;">
+    <strong>The honest finding from the data:</strong> Microsoft Hyderabad scores noticeably lower than Google and Nvidia on culture (3.9) and career opportunities (3.8) — employees cite frequent re-orgs, less challenging work at the India level, and perks that have reduced since COVID. Google India actually rates <em>higher</em> than the global Google average on almost every metric. Nvidia Hyderabad specifically scores 4.5 on both culture and career growth — the Hyderabad office is rated better than the global Nvidia average.
+  </div>
+
+  <div class="hero goog">
+    <div class="hero-name">🥇 Google India — Primary Target</div>
+    <div class="hero-role">L5 Software Engineer — Vertex AI Platform / Cloud AI · Hyderabad or Bangalore</div>
+    <div class="hero-meta">
+      <span class="badge">₹50–95L TC · ₹28–52L base</span>
+      <span class="badge">4.4 WLB · 92% recommend India</span>
+      <span class="badge">Best perks in industry</span>
+    </div>
+    <div class="score-row">
+      <div class="score-chip"><div class="score-val">4.4</div><div class="score-lbl">WLB</div></div>
+      <div class="score-chip"><div class="score-val">4.5</div><div class="score-lbl">Culture</div></div>
+      <div class="score-chip"><div class="score-val">4.4</div><div class="score-lbl">Growth</div></div>
+      <div class="score-chip"><div class="score-val">92%</div><div class="score-lbl">Recommend</div></div>
+    </div>
+    <div class="why-box">Google India scores consistently higher than the global Google average — 92% recommend vs 85% worldwide. The India office has flexible hours, hybrid work, gourmet food, ergonomic workspaces, world-class learning budget, and strong maternity/paternity leave. Your Vertex AI production experience is the rarest differentiator — most candidates have used it, you've built production systems on it. Bangalore campus is rated better than Hyderabad (newer, stronger Google vibe), but both are world-class by any standard.</div>
+    <div class="warn-box">⚠️ One honest watch-out: Promotion at Google can be slow and politically influenced at L5→L6. The technical interview bar is the highest of the three — needs the most prep time. Bangalore preferred over Hyderabad for Google specifically based on employee reviews.</div>
+  </div>
+
+  <div class="hero nv">
+    <div class="hero-name">🥈 Nvidia India — Best WLB + Culture + Stock</div>
+    <div class="hero-role">Senior Software Engineer — AI Infrastructure / NIM / LLM Serving · Hyderabad or Bangalore</div>
+    <div class="hero-meta">
+      <span class="badge">₹40–85L TC · ₹22–42L base</span>
+      <span class="badge">4.5 culture + career (Hyd)</span>
+      <span class="badge">Unlimited PTO · Hybrid</span>
+    </div>
+    <div class="score-row">
+      <div class="score-chip"><div class="score-val">4.1</div><div class="score-lbl">WLB (Hyd)</div></div>
+      <div class="score-chip"><div class="score-val">4.5</div><div class="score-lbl">Culture (Hyd)</div></div>
+      <div class="score-chip"><div class="score-val">4.5</div><div class="score-lbl">Growth (Hyd)</div></div>
+      <div class="score-chip"><div class="score-val">93%</div><div class="score-lbl">Recommend (Hyd)</div></div>
+    </div>
+    <div class="why-box">Nvidia Hyderabad is rated <em>better</em> than the global Nvidia average — 4.5/5 on both culture and career growth. Fishbowl employees describe it as "pretty relaxed" with a genuine ramp-up period before expectations kick in. The RSU story is extraordinary — Nvidia stock has grown ~10x in 3 years; employees who joined in 2022–2023 saw their RSU grants multiply dramatically. Unlimited PTO, hybrid work, and an engineering-first culture where technical depth is genuinely respected. Hyderabad campus means no relocation.</div>
+    <div class="warn-box">⚠️ The CUDA/GPU programming gap is real for hardware-adjacent teams. But Nvidia's NIM (Nvidia Inference Microservices) and AI Platform teams specifically need software engineers with LLM serving + async infra backgrounds — that's you. The key is targeting the right team. WLB is team-dependent — some teams have release-cycle crunches, others are very relaxed.</div>
+  </div>
+
+  <div class="hero ms">
+    <div class="hero-name">🥉 Microsoft India — Best Direct Profile Fit, No Relocation</div>
+    <div class="hero-role">Senior SDE — Azure AI Platform / Copilot Infrastructure · Hyderabad</div>
+    <div class="hero-meta">
+      <span class="badge">₹40–90L TC · ₹22–45L base</span>
+      <span class="badge">4.0 WLB · 78% recommend Hyd</span>
+      <span class="badge">Free meals · Health · Hybrid</span>
+    </div>
+    <div class="score-row">
+      <div class="score-chip"><div class="score-val">4.0</div><div class="score-lbl">WLB (Hyd)</div></div>
+      <div class="score-chip"><div class="score-val">3.9</div><div class="score-lbl">Culture (Hyd)</div></div>
+      <div class="score-chip"><div class="score-val">3.8</div><div class="score-lbl">Growth (Hyd)</div></div>
+      <div class="score-chip"><div class="score-val">78%</div><div class="score-lbl">Recommend (Hyd)</div></div>
+    </div>
+    <div class="why-box">Still a strong pick — highest profile fit of the three (Azure AI is your exact stack), no relocation, and the Hyderabad campus is their largest outside the US. Free breakfast and lunch, health insurance, child care reimbursement, tuition assistance, and flexible hybrid work are all confirmed perks. Growth Mindset culture under Satya Nadella is genuine and well-regarded. Stays in top 3 because the profile match and no-relocation advantage are hard to replace.</div>
+    <div class="warn-box">⚠️ Hyderabad specifically scores below global Microsoft average on culture (3.9) and career opportunities (3.8). Employees cite frequent re-orgs, sometimes less challenging work at the India level vs Redmond, and perks that have reduced since COVID. The 78% recommend rate in Hyderabad is noticeably lower than Google (92%) and Nvidia (93%). Worth knowing before you commit.</div>
+  </div>
+</div>
+
+<!-- GOOGLE -->
+<div id="google" class="sec">
+  <div class="section-title">Interview format — Google India L5 (Vertex AI Platform / Cloud AI)</div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-g">Screen</span><span class="round-title">Recruiter call + Online Assessment (45 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">FORMAT</div>
+    <div class="detail">Google India starts with a recruiter call (background + role fit), then an online coding screen via their own platform. 1–2 Medium problems, 45 minutes. Your aim is a clean correct solution with good complexity analysis — not just working code.</div>
+    <div class="tip">Your hook for the recruiter call: "I have 2+ years of production Vertex AI experience — I've built LLM pipelines, routing infrastructure, and agentic systems on top of Vertex in a professional context. I'd specifically like to talk to the Vertex AI Platform team."</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-g">R1–R3</span><span class="round-title">3 Coding Rounds — LeetCode Medium/Hard (45 min each)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">GOOGLE'S SPECIFIC BAR</div>
+    <div class="detail">Google has the highest coding bar of all three. They expect optimal solutions, not just working code. Three separate rounds, each with a different interviewer. Problems lean toward: Graphs, Trees, Dynamic Programming, String manipulation, and occasionally Bit manipulation.</div>
+    <div class="lbl">WHAT MATTERS AT GOOGLE</div>
+    <div class="detail" style="margin-top:6px;">Talking through your approach before coding. Explaining time/space complexity clearly. Identifying edge cases proactively. Moving from brute force → optimal, narrating the transition. Google interviewers score on communication as much as correctness.</div>
+    <div class="lbl">PRIORITY TOPICS</div>
+    <div class="detail" style="margin-top:6px;">
+      <span class="tag tg">Graphs — BFS/DFS/Dijkstra</span><span class="tag tg">Trees — all traversals + LCA</span><span class="tag tg">DP — 2D grid, intervals</span><span class="tag tg">Hash maps + sliding window</span><span class="tag tg">Heaps / Priority queue</span>
+    </div>
+    <div class="tip">Google will ask Hard problems at L5. You need 60+ LeetCode problems across Medium and Hard to be comfortable. NeetCode Blind 75 + NeetCode 150 is the minimum prep set. Quality over quantity — understand every solution deeply, don't just collect solved problems.</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-g">R4</span><span class="round-title">System Design — Googleyness + AI Systems (45 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">WHAT TO EXPECT</div>
+    <div class="detail">For Vertex AI team specifically: "Design a production LLM serving platform at Google scale", "Design a RAG system for Google Workspace documents", "Design a multi-tenant AI model routing layer." Google wants to see distributed systems depth — not just knowing the components, but discussing CAP theorem, consistency models, and failure modes fluently.</div>
+    <div class="tip">Your LLM routing layer (5 providers, 3-tier cost routing, async pipeline) is directly relevant. Translate it to Google scale: "I'd start from what I've built in production — here's the architecture — and here's what changes when you go from hundreds to millions of requests/day." Google loves candidates who have real production reference points and can reason from them.</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-g">R5</span><span class="round-title">Googleyness & Leadership (45 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">GOOGLE'S FRAMEWORK</div>
+    <div class="detail">Google probes for "Googleyness" — intellectual humility, comfort with ambiguity, collaborative instinct, and genuine intellectual curiosity. They don't use rigid LPs. Questions are open-ended: "Tell me about a time you had to work with incomplete information," "When did you disagree with a technical decision, and what did you do?"</div>
+    <div class="tip">
+      <strong>Intellectual curiosity:</strong> "Building the multi-cloud LLM routing layer — here's what I read, what I experimented with, what I was wrong about initially."<br><br>
+      <strong>Ambiguity:</strong> "Designing the async pipeline before there were established patterns for LLM job queues — here's how I reasoned through the architecture with limited precedent."<br><br>
+      <strong>Collaboration:</strong> "The catalog traversal agent — working with data stewards who had domain expertise I didn't, here's how I integrated their knowledge into the prompt design."
+    </div>
+  </div></div>
+
+  <div class="verdict v-g">
+    <strong>Google verdict:</strong> Hardest interview of the three — 3 coding rounds including Hard problems. Needs the most prep time (12–14 weeks to be genuinely ready). But the payoff is the strongest: best perks, best India culture score, highest comp ceiling, and working on Vertex AI — the exact platform you've been using in production. <strong>Apply at week 12–14.</strong>
+  </div>
+</div>
+
+<!-- NVIDIA -->
+<div id="nvidia" class="sec">
+  <div class="section-title">Interview format — Nvidia India Senior SWE (AI Infrastructure / NIM)</div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-n">Screen</span><span class="round-title">Recruiter + HackerRank Online Assessment (60–90 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">FORMAT</div>
+    <div class="detail">Nvidia starts with a HackerRank OA — 2–3 problems, 60–90 minutes. Medium difficulty, focused on algorithms and data structures. Automated pass/fail before any human interview.</div>
+    <div class="tip">Nvidia's OA is less brutal than Google's coding rounds. Clean correct solutions on 2/3 problems is typically enough to pass. After the OA, a recruiter call confirms role fit and team interest. <strong>Key message for the recruiter:</strong> target the NIM / AI Platform / LLM serving teams specifically — not the CUDA/hardware teams where your gap is real.</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-n">R1</span><span class="round-title">Technical Coding Round (60 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">FORMAT</div>
+    <div class="detail">One substantive coding problem with follow-ups, or 2 medium problems. Nvidia's coding bar is Medium — lower than Google, similar to Microsoft. For AI Platform roles specifically, Python is the expected language. Clean readable code matters more than micro-optimisations.</div>
+    <div class="lbl">TOPICS</div>
+    <div class="detail" style="margin-top:6px;"><span class="tag tn">Graphs + BFS/DFS</span><span class="tag tn">Hash maps</span><span class="tag tn">Trees</span><span class="tag tn">Queues / Priority queues</span><span class="tag tn">Sliding window</span></div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-n">R2</span><span class="round-title">System Design — AI Infrastructure + Serving (60 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">NVIDIA-SPECIFIC QUESTIONS</div>
+    <div class="detail">For NIM / AI Platform teams: "Design a scalable LLM inference serving system", "Design a multi-tenant model routing layer for NIM microservices", "Design an async job queue for GPU-backed LLM inference jobs." Nvidia interviewers care deeply about throughput, latency, and GPU utilisation in system design — which is different from the cloud-agnostic design you'd give at Google.</div>
+    <div class="tip">Your async Redis pipeline story translates directly — but add GPU context: "The same sliding-window consumer model I built for CPU-bound LLM calls maps to GPU inference — but the constraint changes from thread pool exhaustion to GPU memory and batch size optimisation." You don't need deep GPU knowledge — you need to show you understand <em>why</em> the GPU constraint changes the design.</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-n">R3</span><span class="round-title">Technical Depth Discussion — AI/ML Concepts (45 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">NVIDIA SPECIFIC</div>
+    <div class="detail">Nvidia often includes a technical depth conversation — not a coding problem, but a discussion about how LLM inference works, what vLLM does, what quantisation means for throughput, how batching affects latency. You don't need to be an expert but you need to be conversant.</div>
+    <div class="tip">
+      Spend 1 week on: vLLM architecture (continuous batching, PagedAttention), INT4/INT8 quantisation tradeoffs (quality vs speed vs memory), KV cache mechanics and why context length matters for memory. These come up directly. Nvidia's blog and YouTube channel have excellent content on all three — straight from the source.
+    </div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-n">R4</span><span class="round-title">Behavioural + Values (45 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">NVIDIA CULTURE</div>
+    <div class="detail">Nvidia values engineering excellence, long-term thinking, and precise technical communication. They probe for: how you handle high-stakes technical decisions, how you learn new domains quickly, and your approach to performance-critical systems.</div>
+    <div class="tip">
+      <strong>High-stakes decision:</strong> "The async Redis Streams migration — here's the trade-off analysis I did, the risk I accepted, and how I made the rollout safe."<br><br>
+      <strong>Learning new domain:</strong> "Transitioning from SDE-2 at Expedia to building production LLM infra — what I had to learn in 6 months and how I approached it."<br><br>
+      <strong>Performance focus:</strong> "The 3-tier LLM routing layer — how I measured the 30% cost improvement and what I was willing to trade for it."
+    </div>
+  </div></div>
+
+  <div class="verdict v-n">
+    <strong>Nvidia verdict:</strong> Most accessible Tier 1 of the three on both profile fit and interview difficulty. The culture + career growth scores in Hyderabad are the highest of any company on this list. The RSU upside with Nvidia's stock performance is genuinely extraordinary. Needs 1–2 weeks of NIM/vLLM domain prep on top of standard coding prep. <strong>Apply at week 9–10.</strong>
+  </div>
+</div>
+
+<!-- MICROSOFT -->
+<div id="microsoft" class="sec">
+  <div class="section-title">Interview format — Microsoft India Senior SDE (Azure AI Platform)</div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-m">Screen</span><span class="round-title">Recruiter + HM Call (30 min) — No coding</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">FORMAT</div>
+    <div class="detail">Background + motivation + role alignment. HM will probe your Azure AI story specifically. No coding at this stage.</div>
+    <div class="tip">"I've built production systems on top of all three major cloud AI providers in the same codebase — Bedrock, Vertex AI, and Azure OpenAI simultaneously. The Azure OpenAI integration with LangChain's <code>AzureChatOpenAI</code>, cross-region inference profiles, managed identity auth — I've handled all of these in production. I want to work on the platform that I've been building on top of."</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-m">R1–R2</span><span class="round-title">2 Coding Rounds — LeetCode Medium (60 min each)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">MICROSOFT BAR</div>
+    <div class="detail">Microsoft asks 1–2 Medium problems per round. They want a working correct solution with clear explanation — not necessarily optimal on the first pass. Communicating your approach, acknowledging trade-offs, and iterating is valued.</div>
+    <div class="lbl">TOPICS</div>
+    <div class="detail" style="margin-top:6px;"><span class="tag tm">Trees + Graphs</span><span class="tag tm">Sliding window</span><span class="tag tm">Hash maps</span><span class="tag tm">Dynamic programming (Medium)</span><span class="tag tm">Heaps</span></div>
+    <div class="tip">Microsoft rarely asks Hard. 25–30 well-understood Medium problems is sufficient for their bar. NeetCode 150 covers everything you need.</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-m">R3</span><span class="round-title">System Design — Azure AI / LLM Infra (60 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">LIKELY QUESTIONS</div>
+    <div class="detail">Design a multi-provider LLM integration layer for Azure AI Studio. Design Copilot's RAG context retrieval. Design an async AI job processing system for long-running LLM tasks. Design an LLM evaluation pipeline.</div>
+    <div class="tip">Questions 1 and 3 are literally your Arhasi work. You walk into this round with the strongest possible answer — your production implementation. "I've actually built this. Let me walk you through what I shipped, then discuss how it scales to Azure's footprint."</div>
+  </div></div>
+
+  <div class="round-card"><div class="round-header" onclick="rtog(this)"><span class="rn rn-m">R4</span><span class="round-title">Behavioural — Growth Mindset Framework (45 min)</span><span class="rtog">+</span></div><div class="round-body">
+    <div class="lbl">MICROSOFT VALUES</div>
+    <div class="detail">Growth Mindset · Clarity · Energy · Success. They probe for: how you learn from failures, how you create clarity in ambiguous situations, how you bring energy to your team, and how you help others succeed.</div>
+    <div class="tip"><strong>Growth Mindset:</strong> SDE-2 → Senior GenAI pivot story.<br><strong>Clarity:</strong> Async migration — communicating a complex technical decision to non-technical stakeholders.<br><strong>Energy:</strong> Shipping the data quality engine across 5 platforms — what kept you motivated and moving.<br><strong>Success:</strong> Mentoring the Expedia intern on DynamoDB architecture.</div>
+  </div></div>
+
+  <div class="verdict v-m">
+    <strong>Microsoft verdict:</strong> Stays in top 3 for one reason — the profile match is unmatched and Hyderabad means no relocation. But go in eyes open: Hyderabad scores lower than Google and Nvidia on culture and career growth per Glassdoor. The Azure AI and Copilot teams are genuinely cutting-edge and partially offset this — team-picking matters. <strong>Apply at week 10–11.</strong>
+  </div>
+</div>
+
+<!-- 12-WEEK PLAN -->
+<div id="plan" class="sec">
+  <div class="intro"><strong>12 weeks · 1.5–2 hrs/day.</strong> Nvidia at week 9 (most accessible), Microsoft at week 10–11, Google at week 12–14. Each earlier application is real interview practice for the next one. Colour tags show which company each task serves.</div>
+
+  <div class="week-card">
+    <div class="wk-lbl">WEEK 1–2 — Visible profile signals + close critical gaps</div>
+    <div class="wk-title">Two weeks of building before a single application</div>
+    <ul class="wk-items">
+      <li><span class="tag ta">All 3</span> Build RAG project with <code>pgvector</code> + LangChain + FastAPI. Push to GitHub with README + architecture diagram. (3 days)</li>
+      <li><span class="tag tg">Google</span><span class="tag tn">Nvidia</span> Rebuild catalog traversal agent in LangGraph — stateful graph, per-node checkpointing, startup resume. Best single-project signal for both companies.</li>
+      <li><span class="tag ta">All 3</span> Update LinkedIn: new headline, About section (already written), add 15 GenAI skills, reorder top 5 pinned skills.</li>
+      <li>Daily: 2 LeetCode Easy/Medium — habit building, not performance yet.</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="wk-lbl">WEEK 3–4 — Coding: Trees + Graphs (highest-frequency topics across all 3)</div>
+    <div class="wk-title">The topic that appears at Google, Nvidia, and Microsoft — and maps to your catalog traversal work</div>
+    <ul class="wk-items">
+      <li><span class="tag ta">All 3</span> NeetCode Trees — all 15 problems. DFS/BFS, BSTs, LCA, tree serialisation. Connect tree problems to your catalog traversal mentally — it makes them stick.</li>
+      <li><span class="tag ta">All 3</span> NeetCode Graphs — 15 core problems. BFS, DFS, topological sort, union find. Google will test Hard-level graph problems.</li>
+      <li><span class="tag tn">Nvidia</span> Start Nvidia domain prep: read vLLM architecture overview, watch Nvidia's "What is NIM?" YouTube video. 30 min/day alongside coding.</li>
+      <li>Write first LinkedIn article: "Async Redis Streams for production LLM workloads" — publish mid-week. Organic recruiter inbound takes 3–4 weeks to kick in, so post early.</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="wk-lbl">WEEK 5–6 — System Design: LLM Routing + Async Pipeline</div>
+    <div class="wk-title">Your two strongest system design topics — build 45-min answers you can deliver cold</div>
+    <ul class="wk-items">
+      <li><span class="tag ta">All 3</span> Practice "Design a unified multi-provider LLM routing layer" — write it fully (tier logic, adapter pattern, async queue, circuit breaker, monitoring). Timed to 45 min. Record and review.</li>
+      <li><span class="tag tg">Google</span> Practice "Design Vertex AI's LLM serving platform at scale" — add: distributed serving, multi-region failover, quota management, shadow testing. Google scale = 10x the complexity of your Arhasi design.</li>
+      <li><span class="tag tn">Nvidia</span> Practice "Design NIM-style LLM inference microservice" — add: continuous batching, GPU memory management, PagedAttention. Use vLLM as the reference implementation.</li>
+      <li><span class="tag ta">All 3</span> NeetCode: Sliding Window + Two Pointers + Heaps sections (20 problems total).</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="wk-lbl">WEEK 7–8 — PyTorch + HuggingFace + Nvidia Domain Depth</div>
+    <div class="wk-title">The gap that separates you from other candidates at Google and Nvidia</div>
+    <ul class="wk-items">
+      <li><span class="tag tg">Google</span><span class="tag tn">Nvidia</span> Run a HuggingFace model locally (Mistral 7B via Ollama). Write a PyTorch-based evaluation script. Push to GitHub. Add "PyTorch · HuggingFace Transformers" to LinkedIn.</li>
+      <li><span class="tag tn">Nvidia</span> Deep dive: read vLLM's "PagedAttention" paper (available on arxiv). Watch Nvidia's GTC talk on continuous batching. Understand: why KV cache matters, what INT8 quantisation trades, how batching changes throughput/latency. This is R3 at Nvidia.</li>
+      <li><span class="tag tg">Google</span> Add MLflow experiment tracking to your LangGraph agent project. 10 lines of code, closes the MLOps gap for Google's platform team expectations.</li>
+      <li><span class="tag ta">All 3</span> NeetCode: Dynamic Programming (15 problems, Medium only). Backtracking (8 problems).</li>
+    </ul>
+  </div>
+
+  <div class="week-card">
+    <div class="wk-lbl">WEEK 8 — AWS ML Specialty cert prep begins</div>
+    <div class="wk-title">Cert that specifically unlocks Microsoft Azure AI + signals seriousness to Google</div>
+    <ul class="wk-items">
+      <li><span class="tag tm">Microsoft</span><span class="tag tg">Google</span> Start AWS ML Specialty — Udemy (Stephane Maarek). 2 hrs/day, 3 weeks to exam-ready. Book the exam date now.</li>
+      <li><span class="tag ta">All 3</span> Lock in 5 STAR stories: async migration, LLM routing cost reduction, data quality engine, Expedia auth scale, SDE→GenAI pivot. Practice each out loud under 3 minutes.</li>
+      <li>Second LinkedIn article: "Multi-provider LLM routing: what I learned building across Bedrock, Vertex AI, and Azure OpenAI" — keyword-dense, technical, will surface in recruiter searches for all 3 companies.</li>
+    </ul>
+  </div>
+
+  <div class="week-card" style="border-color:#76B900;border-width:2px;">
+    <div class="wk-lbl" style="color:#3A6000;">WEEK 9 — NVIDIA APPLICATION</div>
+    <div class="wk-title" style="color:#3A6000;">Apply to Nvidia. This is your most accessible Tier 1 with highest culture score.</div>
+    <ul class="wk-items">
+      <li><span class="tag tn">Nvidia</span> Apply via nvidia.com/en-us/about-nvidia/careers — filter "AI Infrastructure" + "Hyderabad" or "Bangalore."</li>
+      <li><span class="tag tn">Nvidia</span> LinkedIn: connect with Nvidia India AI Platform engineering managers. Comment on a technical post first, then connection request. Deepa Nair (Nvidia India TA) is active on LinkedIn.</li>
+      <li><span class="tag tn">Nvidia</span> Wellfound also lists Nvidia India roles — apply there as a secondary channel.</li>
+      <li><span class="tag ta">All 3</span> Complete HackerRank OA the same day it arrives — do not wait. OA expiry windows are short at Nvidia.</li>
+    </ul>
+  </div>
+
+  <div class="week-card" style="border-color:#185FA5;border-width:2px;">
+    <div class="wk-lbl" style="color:#0D3B6E;">WEEK 10–11 — MICROSOFT APPLICATION</div>
+    <div class="wk-title" style="color:#0D3B6E;">Apply to Microsoft. Activate Expedia referral network aggressively this week.</div>
+    <ul class="wk-items">
+      <li><span class="tag tm">Microsoft</span> Apply via careers.microsoft.com — "Azure AI Hyderabad" + "Copilot Infrastructure Hyderabad." Apply to 2–3 roles simultaneously.</li>
+      <li><span class="tag tm">Microsoft</span> Referral search: LinkedIn → "Expedia" + "Microsoft" 2nd-degree connections. Message any Expedia alum at Microsoft — the Expedia→Microsoft path is very common.</li>
+      <li><span class="tag tm">Microsoft</span> AWS ML Specialty exam this week. Add to LinkedIn and resume immediately after passing.</li>
+      <li>Third mock interview: full Microsoft loop simulation (2 coding + 1 system design + 1 behavioural).</li>
+    </ul>
+  </div>
+
+  <div class="week-card" style="border-color:#0F6E56;border-width:2px;">
+    <div class="wk-lbl" style="color:#0A3D1F;">WEEK 12–14 — GOOGLE APPLICATION</div>
+    <div class="wk-title" style="color:#0A3D1F;">Apply to Google. By now: cert in hand, 3 GitHub projects, 60+ LeetCode problems, 2 LinkedIn articles published.</div>
+    <ul class="wk-items">
+      <li><span class="tag tg">Google</span> Apply via google.com/careers — "Vertex AI Hyderabad" or "Cloud AI Bangalore." Bangalore campus preferred for Google specifically.</li>
+      <li><span class="tag tg">Google</span> Referral: search LinkedIn 2nd-degree connections at Google India. Any Googler referral moves you to the front of the queue. Even a weak connection is worth asking.</li>
+      <li><span class="tag tg">Google</span> Attend Google Cloud Next India (if happening) — recruiter face time at events is real and underused.</li>
+      <li><span class="tag tg">Google</span> Final 2 weeks: 5 LeetCode Hard problems (attempt, not just solve). Timed mock coding round at Hard difficulty. Practice explaining failures — Google values how you handle not getting to optimal.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- APPLY STRATEGY -->
+<div id="apply" class="sec">
+  <div class="section-title">Company-specific fastest paths</div>
+
+  <div class="apply-card" style="color:#0F6E56;border-color:#0F6E56;">
+    <strong>Google India — Referral is everything</strong><br><br>
+    Cold application to Google has the lowest response rate of any MAANG. A referral from any Google employee (anywhere in the world, not just India) moves you into a dedicated review queue. Steps: (1) Find 2nd-degree LinkedIn connections at Google India. (2) If none, find any Googler in your broader network. (3) Message with job link + 1-paragraph case for fit + explicit ask: "Would you be comfortable referring me?" (4) Referral takes 1 click for them. Most Googlers are happy to refer strong candidates. If zero referral path: apply directly + attend Google Cloud events + engage technically with Google India engineering managers on LinkedIn (not recruiters — they follow the same queue, engineers can champion you internally).
+  </div>
+
+  <div class="apply-card" style="color:#76B900;border-color:#76B900;">
+    <strong>Nvidia India — Direct + technical LinkedIn outreach</strong><br><br>
+    Nvidia India is smaller and less bureaucratic than Google for hiring. Steps: (1) Apply via nvidia.com/careers + Wellfound simultaneously. (2) LinkedIn: search "Nvidia India AI Platform" or "Nvidia India NIM" — connect with 2–3 senior engineers on the team. Send a technically specific message: "I've built production LLM serving infrastructure with async worker pools — directly relevant to what the NIM team is doing. I've applied for [role] and would love to connect." (3) Deepa Nair is Nvidia India's active TA recruiter on LinkedIn — connect directly after applying. (4) Complete HackerRank OA the day it arrives — Nvidia's OA window can be as short as 3–5 days.
+  </div>
+
+  <div class="apply-card" style="color:#185FA5;border-color:#185FA5;">
+    <strong>Microsoft India — Expedia network is your unfair advantage</strong><br><br>
+    The Expedia→Microsoft path is one of the most common transitions in the India tech market. Steps: (1) LinkedIn: search "Expedia" + "Microsoft" people filter — find anyone who moved from Expedia to Microsoft in the past 3 years. (2) Message: "I saw you moved from Expedia to Microsoft [team]. I'm a Senior GenAI engineer — previously SDE-2 at Expedia — exploring Azure AI Platform roles in Hyderabad. Would you be comfortable referring or chatting briefly?" (3) Apply via careers.microsoft.com simultaneously. A referral + direct application together move you through the fastest. (4) If no Expedia connection: Microsoft India TA recruiters on LinkedIn are responsive — search "Microsoft India Technical Recruiting" and connect with the Azure/AI-focused recruiters.
+  </div>
+</div>
+</div>
+
+<script>
+function rtog(h){
+  const b=h.nextElementSibling;
+  const t=h.querySelector('.rtog');
+  const o=b.classList.toggle('open');
+  t.textContent=o?'−':'+';
+}
+function show(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
