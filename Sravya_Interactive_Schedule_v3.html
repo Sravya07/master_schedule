@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sravya · Night-Shift Operating System v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12141c; --panel:#1a1d29; --panel2:#212536; --line:#2e3247;
+  --text:#e8e9f0; --dim:#8b90a8;
+  --gold:#f0b95c; --prep:#7aa2f7; --fit:#73c991; --care:#e8a0bf;
+  --work:#565b73; --rest:#9d8cff; --drink:#6dd3ce; --ankle:#ff9e64;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--text);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.5}
+header{padding:20px 16px 10px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px}
+.htext{flex:1}
+.brand{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+h1{font-size:22px;font-weight:700;margin-top:4px}
+h1 span{color:var(--dim);font-weight:400}
+.sub{font-size:12px;color:var(--dim);margin-top:2px}
+#menuBtn{background:var(--panel2);border:1px solid var(--line);color:var(--gold);border-radius:10px;padding:10px 14px;font-size:13px;cursor:pointer;font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+
+.phasebar{display:flex;gap:6px;padding:12px 16px 2px;overflow-x:auto}
+.phasebar .lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);align-self:center;flex-shrink:0;margin-right:2px}
+.pchip{background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer;white-space:nowrap}
+.pchip.active{border-color:var(--drink);color:var(--drink);background:var(--panel2)}
+
+.weeknav{display:flex;align-items:center;gap:10px;padding:12px 16px 6px}
+.weeknav button{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 14px;font-size:16px;cursor:pointer}
+.weeklabel{flex:1;text-align:center}
+.weeklabel .wk{font-weight:700;font-size:15px}
+.weeklabel .ph{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;padding:2px 8px;border-radius:999px;border:1px solid var(--line);display:inline-block;margin-top:3px}
+.ph.p0{color:#ff9e64;border-color:#ff9e6455}.ph.p1{color:var(--fit);border-color:#73c99155}
+.ph.p2{color:var(--prep);border-color:#7aa2f755}.ph.p3{color:var(--rest);border-color:#9d8cff55}
+
+.daytabs{display:flex;gap:6px;padding:10px 16px;overflow-x:auto}
+.daytab{flex:1;min-width:44px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 2px;text-align:center;cursor:pointer;color:var(--dim)}
+.daytab .d{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase}
+.daytab .n{font-size:15px;font-weight:700;color:var(--text)}
+.daytab .s{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--gold)}
+.daytab.active{background:var(--panel2);border-color:var(--gold)}
+.daytab.active .n,.daytab.active .d{color:var(--gold)}
+
+.daynote{margin:4px 16px 10px;padding:10px 12px;background:var(--panel);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-size:13px;color:var(--dim)}
+.daynote b{color:var(--text)}
+
+.timeline{padding:0 16px 40px}
+.slot{display:flex;gap:12px;margin-bottom:8px}
+.slot .time{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);width:64px;flex-shrink:0;padding-top:14px;text-align:right}
+.card{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;border-left-width:4px}
+.card.prep{border-left-color:var(--prep)}.card.fit{border-left-color:var(--fit)}
+.card.care{border-left-color:var(--care)}.card.work{border-left-color:var(--work)}
+.card.meal{border-left-color:var(--gold)}.card.rest{border-left-color:var(--rest)}
+.card.drink{border-left-color:var(--drink)}.card.ankle{border-left-color:var(--ankle)}
+.card summary{list-style:none;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card summary::-webkit-details-marker{display:none}
+.card .t{font-weight:500;font-size:14px}
+.card .tag{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);flex-shrink:0}
+.card .chev{color:var(--dim);transition:transform .18s;flex-shrink:0}
+.card[open] .chev{transform:rotate(90deg)}
+.detail{padding:0 14px 14px;font-size:13px;color:var(--dim);border-top:1px dashed var(--line)}
+.detail ol,.detail ul{padding-left:18px;margin-top:8px}
+.detail li{margin-bottom:5px}
+.detail b{color:var(--text);font-weight:500}
+.detail .why{margin-top:10px;padding:8px 10px;background:var(--panel2);border-radius:8px;font-size:12px}
+.detail .why::before{content:"why · ";font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.detail .alt{margin-top:10px;padding:8px 10px;background:var(--panel2);border-radius:8px;font-size:12px}
+.detail .alt::before{content:"swap options · ";font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--drink)}
+.macro{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);margin-top:8px}
+
+/* ---- Reference drawer ---- */
+#drawer{position:fixed;inset:0;background:var(--ink);z-index:50;display:none;flex-direction:column}
+#drawer.open{display:flex}
+.dhead{display:flex;align-items:center;gap:10px;padding:16px;border-bottom:1px solid var(--line)}
+.dhead h2{font-size:16px;flex:1}
+#closeD{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 14px;cursor:pointer}
+.dtabs{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;border-bottom:1px solid var(--line)}
+.dtab{background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:7px 13px;font-size:12px;cursor:pointer;white-space:nowrap}
+.dtab.active{border-color:var(--gold);color:var(--gold);background:var(--panel2)}
+#dcontent{flex:1;overflow-y:auto;padding:16px;font-size:13px;color:var(--dim);max-width:720px;margin:0 auto;width:100%}
+#dcontent h3{color:var(--text);font-size:15px;margin:18px 0 6px}
+#dcontent h4{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin:14px 0 4px}
+#dcontent ul,#dcontent ol{padding-left:18px;margin:6px 0}
+#dcontent li{margin-bottom:4px}
+#dcontent b{color:var(--text)}
+#dcontent table{width:100%;border-collapse:collapse;margin:8px 0;font-size:12px}
+#dcontent th,#dcontent td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+#dcontent th{color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.srcnote{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--drink);margin-bottom:10px}
+@media(prefers-reduced-motion:reduce){.card .chev{transition:none}}
+@media(min-width:760px){.timeline{max-width:680px;margin:0 auto}.daytabs,.weeknav,.phasebar{max-width:712px;margin:0 auto}.daynote{max-width:680px;margin:4px auto 10px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="htext">
+    <div class="brand">optimized.chaos · operating system v3</div>
+    <h1>Sravya's Week <span>· 3 PM–1 AM shift · IST</span></h1>
+    <div class="sub">Integrated: meals · lifestyle · Month-1 workout · ankle 16-wk plan · skincare · hair v2 · AWS 9-day · interview sprint</div>
+  </div>
+  <button id="menuBtn">☰ Plans</button>
+</header>
+
+<div class="phasebar"><span class="lbl">Cycle</span>
+  <button class="pchip" data-p="mens">Menstruation</button>
+  <button class="pchip active" data-p="foll">Follicular</button>
+  <button class="pchip" data-p="ovul">Ovulation</button>
+  <button class="pchip" data-p="lute">Luteal</button>
+</div>
+
+<div class="weeknav">
+  <button id="prevW" aria-label="Previous week">◀</button>
+  <div class="weeklabel"><div class="wk" id="wkLabel"></div><div class="ph" id="phLabel"></div></div>
+  <button id="nextW" aria-label="Next week">▶</button>
+</div>
+
+<div class="daytabs" id="dayTabs"></div>
+<div class="daynote" id="dayNote"></div>
+<div class="timeline" id="tl"></div>
+
+<!-- Reference drawer -->
+<div id="drawer">
+  <div class="dhead"><h2>📚 Original Plans (reference)</h2><button id="closeD">✕ Close</button></div>
+  <div class="dtabs" id="dtabs"></div>
+  <div id="dcontent"></div>
+</div>
+
+<script>
+/* ============ CORE MODEL ============ */
+const START=new Date(2026,7,17), TOTAL_WEEKS=32, DAYS=['MON','TUE','WED','THU','FRI','SAT','SUN'];
+let cyc='foll';
+const CYCNAME={mens:'Menstruation',foll:'Follicular',ovul:'Ovulation',lute:'Luteal'};
+function phaseOf(d){ if(d<=new Date(2026,7,22))return'p0'; if(d<=new Date(2026,8,20))return'p1'; if(d<=new Date(2026,11,31))return'p2'; return'p3';}
+const PHASE_META={p0:['PHASE 0 · AWS SAP-C02 SPRINT','p0'],p1:['PHASE 1 · MONTH-1 REBUILD + FOUNDATIONS','p1'],p2:['PHASE 2 · INTERVIEW PEAK + OVERLOAD','p2'],p3:['PHASE 3 · FITNESS-DOMINANT','p3']};
+/* Ankle phases from the official 16-week plan */
+function anklePhaseOf(d){ if(d<=new Date(2026,7,21))return'A2'; if(d<=new Date(2026,8,11))return'A3'; if(d<=new Date(2026,9,2))return'A4'; if(d<=new Date(2026,10,13))return'A5'; return'AMNT';}
+const ANKLE_NAME={A2:'Ankle Phase 2 · gentle strength + proprioception (to Aug 21)',A3:'Ankle Phase 3 · progressive strengthening (Aug 21–Sep 11)',A4:'Ankle Phase 4 · activity return (Sep 11–Oct 2)',A5:'Ankle Phase 5 · full return + running (Oct 2–Nov 13)',AMNT:'Ankle · lifetime maintenance 2×/week'};
+
+/* ---------- MORNING DRINK ---------- */
+function morningDrink(){
+  const map={
+    mens:['Ajwain + ginger water','½ tsp ajwain + 1-inch ginger boiled in 300 ml water 5 min. Strain, sip warm.','Anti-spasmodic and warming — relieves cramps, bloating, period nausea.'],
+    foll:['Spearmint tea','1 tsp dried spearmint steeped in 250 ml hot water, 5 min. Plain. (2 cups/day this phase.)','Evidence for lowering free testosterone in PCOS — most effective in the follicular phase.'],
+    ovul:['Warm lemon water','Juice of ½ lemon in 200 ml warm water, within 5 min of waking. No sugar.','Vit C primes iron absorption for breakfast (anemia priority) + gentle cortisol balancer.'],
+    lute:['Ashwagandha warm water','¼ tsp KSM-66 powder in 200 ml warm water. (Doctor check first.)','Adaptogen — lowers cortisol, softens luteal anxiety and mood dips; mildly helps insulin sensitivity.']
+  };
+  const[t,how,why]=map[cyc];
+  return{t:'Morning drink · '+t,c:'drink',d:'<ul><li>'+how+'</li><li>Then: sunlight + light stretch</li></ul><div class="why">'+why+'</div><div class="alt">Rotation pool (any phase): warm lemon water · jeera water (1 tsp cumin soaked overnight — fasting glucose) · methi seed water (overnight soak — insulin sensitivity + iron) · amla juice 30 ml (highest Vit C — iron absorption).</div>'};
+}
+
+/* ---------- SEED CYCLING ---------- */
+function seedCard(){
+  const early=(cyc==='mens'||cyc==='foll');
+  return{t:'Seeds + nuts · '+(early?'flax + pumpkin':'sesame + sunflower')+' (seed cycling)',c:'drink',
+  d:'<ul><li><b>'+(early?'1 tbsp ground flaxseed + 1 tbsp pumpkin seeds':'1 tbsp sesame (nuvvulu) + 1 tbsp sunflower seeds')+'</b> — stir into overnight oats or eat alongside breakfast</li><li><b>6–8 soaked almonds</b> — soaked overnight, peeled (removes phytic acid that blocks iron)</li></ul><div class="why">'+(early?'Menstruation + follicular: flax lignans + pumpkin zinc support oestrogen metabolism.':'Ovulation + luteal: sesame + sunflower support progesterone; sunflower adds vit E.')+' Consistency across 3+ cycles matters more than perfection. Grind flax weekly, store in fridge.</div>'};
+}
+
+/* ---------- SKIN (per official Skincare_Schedule.docx) ---------- */
+const skinAM='<ol><li><b>Minimalist Oat Extract Cleanser</b> — wet face, gentle circular massage, rinse</li><li>Pat dry gently</li><li><b>Minimalist Vitamin C 10%</b> — 2–3 drops, tap all over — <b>wait 10 min</b></li><li><b>Excela Moisturiser</b> — thin layer</li><li><b>Derma Co SPF 60</b> — generous, last step always</li><li><b>Sebamed Lip Defence SPF 30</b></li></ol><div class="why">AM Vit C + SPF is the hyperpigmentation shield. Oat cleanser is the official AM step — CeraVe SA belongs to nights.</div>';
+function skinPM(day){
+  let x='<ol><li><b>Suganda Squalane Cleansing Oil</b> — <b>makeup days only</b>: massage on dry face, emulsify with water, rinse</li><li><b>CeraVe SA Smoothing Cleanser</b> — gentle circular massage, rinse thoroughly</li><li>Pat dry gently</li>';
+  if(day===5){x+='<li><b>Minimalist Kaolin Clay 4% Mask</b> — apply evenly, <b>10–15 min</b>, rinse</li><li><b>Niacinamide 10% + Zinc</b> — wait 10 min</li><li><b>Excela</b> · <b>No WildOak toner on clay nights</b></li></ol>';}
+  else{x+='<li><b>WildOak Ginseng Toner</b> — pat in, wait 2 min (until bottle finishes, then skip)</li><li><b>Minimalist Niacinamide 10% + Zinc</b> — 2–3 drops — <b>wait 10 min</b></li><li><b>Excela Moisturiser</b> — thin layer</li></ol>';}
+  x+='<div class="alt">Situational (see ☰ Plans → Skincare): Glycolic night 1–2×/month max (travel / bad-skin week — different rules, no niacinamide) · Snail-mucin recovery night · Weekly scalp glycolic (separate day from face glycolic). Never combine glycolic with niacinamide, CeraVe SA, WildOak, clay, or Vit C.</div>';
+  return x;
+}
+
+/* ---------- HAIR (v2 protocol) ---------- */
+const HAIR={
+ 0:'<b>Sebamed shampoo</b> — scalp 2–3 min massage, warm water · rinse cool · <b>Soultree Hibiscus conditioner</b> pea-size, ends only 2–3 min · cool rinse · pat damp · air dry · optional evening: 2–3 drops Livon on ends',
+ 2:'<b>Nizoral 2%</b> — <b>leave on scalp 5 min</b>, then massage · rinse cool · conditioner ends only 2–3 min · cool rinse · air dry · optional evening Livon',
+ 5:'<b>Sebamed</b> — 2–3 min scalp massage to wash out overnight oil · rinse cool · conditioner ends 2–3 min · cool rinse · <b>Livon 2–3 drops on damp ends</b> — weekend ready ✓'
+};
+const OILNIGHT={t:'Rosemary oil night · v2 blend (post-diary)',c:'care',d:'<ol><li><b>3–4 drops of 2% Rosemary + Jojoba + Grapeseed blend</b> on DRY scalp</li><li>Part hair into 4–6 sections · massage 2–3 min</li><li>Tie loosely / towel cap (protect pillowcase) · sleep with oil on (8–12 hr absorption)</li></ol><div class="why">v2 formulation: 2 mL rosemary + 49 mL jojoba + 49 mL grapeseed = 100 mL. Grapeseed is ultra-lightweight, anti-inflammatory, non-comedogenic — ideal for fine hair + PCOS scalp. Jojoba mimics sebum, prevents rebound oiliness.</div><div class="alt">The protocol prefers 6–8 PM application. On office Fridays that falls mid-shift, so this slot (≈1:35 AM) still gives ~9 hrs before Saturday wash — within the 8–12 hr window. If home on a Friday evening, apply in the 7:30–8:30 dinner break instead.</div>'};
+
+/* ---------- ANKLE (official 16-week plan, adapted to shift) ---------- */
+function ankleMorning(ap){
+  return{t:'Ankle · morning mobility (5–8 min)',c:'ankle',d:'<ul><li><b>Ankle circles</b> — 20 each direction × 2 sets, slow (3–4 s/circle), leg elevated</li><li><b>Point &amp; flex</b> — 15 × 2 sets, controlled 2 s each way</li></ul><div class="why">'+ANKLE_NAME[ap]+'. Circles + P&amp;F run twice daily, 7 days/week — they are the mobility bookends of every day.</div>'};
+}
+function ankleBalance(ap){
+  let extra='';
+  if(ap==='A2')extra='<li>Week-3 progression: try eyes closed 10–15 s (wall firmly)</li>';
+  if(ap==='A3')extra='<li><b>Pillow balance</b> (folded pillow/yoga mat) 20–30 s × 5–6 · much harder = correct</li><li><b>Arm-movement balance</b> 3×/wk: raise both arms overhead 5 s up/5 s down while balancing</li>';
+  if(ap==='A4')extra='<li><b>Eyes-closed pillow balance</b> 20 s × 5 daily</li>';
+  if(ap==='A5'||ap==='AMNT')extra='<li>Maintenance dose: flat 30 s × 5 + pillow 20–30 s × 3</li>';
+  return{t:'Ankle · midday balance (10 min)',c:'ankle',d:'<ul><li><b>Standing single-leg balance</b> — injured leg, uninjured knee bent, light wall touch (safety only) · 20–30 s × 8–10 reps</li>'+extra+'</ul><div class="why">THE most important exercise for the proprioception deficit — this is what prevents re-injury #3. Track hold time daily.</div>'};
+}
+function ankleEvening(ap,day){
+  if(ap==='AMNT')return (day===0||day===3)?{t:'Ankle · lifetime maintenance (20 min, 2×/wk)',c:'ankle',d:'<ul><li>Calf raises both legs 15×2 · single-leg 12×2 each</li><li>Balance flat 30 s ×5 · pillow 20–30 s ×3</li><li>Eversion (band or uninjured-foot) 12×2 · lateral band walks 15 steps ×2</li></ul><div class="why">Missing these is how injury #1 became injury #2. Not optional — Monday + Thursday, indefinitely.</div>'}:null;
+  const mwfs=(day===0||day===2||day===4||day===5);
+  let items;
+  if(ap==='A2'){
+    items=mwfs?'<li><b>Eversion — uninjured-foot method (MOST CRITICAL)</b>: seated, uninjured foot against outer edge of injured foot, push OUTWARD, hold 3–5 s, return 3 s · 12–15 × 3</li><li><b>Calf raises</b> (standing, wall support) 15 × 2, lower 3 s'+(day===5?' — or alphabet on Sat':'')+'</li><li><b>Seated single-leg lift</b> — hold ankle neutral 10–15 s · 8–10 × 2</li>':'<li><b>Dorsiflexion — dupatta/towel loop</b> around ball of foot, pull toes toward you vs towel, hold 2 s · 12 × 3</li><li><b>Ankle alphabet</b> — full A–Z, slow, leg elevated (4–5 min)</li>';
+  }else if(ap==='A3'){
+    items=mwfs?'<li>Eversion — increase to <b>15–18 reps × 3</b> (or thicker band once bands arrive)</li><li><b>Single-leg calf raises</b> (Week 5+, from Sep 4): injured leg only, 8–10 × 2, only if two-leg 15 feels easy</li><li><b>Step-ups</b> (Week 5+): bottom stair, injured foot first, 10 × 2 — controlled, no jumping</li>':'<li>Dorsiflexion towel method 12 × 3</li><li>Ankle alphabet A–Z</li>';
+    items+='<li>Walk 15–20 min flat with brace (any time today)</li>';
+  }else if(ap==='A4'){
+    items='<li>Continue all Phase-3 strength (eversion, calf raises, step-ups — add water-bottle load Week 9+)</li><li><b>Lateral band walks / shuffles</b> 10–15 steps each way × 3</li><li>Activity intro per week: swim/pool-walk (wk7) → stationary bike (wk8) → treadmill walk (wk8–9, brace on) → walk-jog intervals 30 s jog/1 min walk × 8 (wk9–10, only if treadmill pain-free)</li>';
+  }else{ /* A5 */
+    items='<li>Running progression (3×/wk): easy flat jog 10–15 min → slight hills → varied terrain → figure-8 direction changes → normal running 20+ min by mid-Nov</li><li>Brace: daily life none · running ON until Oct 23, then optional · sports ON indefinitely</li><li>Keep 2 strength mini-sessions/week (eversion + calf raises + balance)</li>';
+  }
+  return{t:'Ankle · desk strength session (10–15 min)',c:'ankle',d:'<ul>'+items+'</ul><div class="why">'+ANKLE_NAME[ap]+'. Official plan slots this 5–6 PM — seated eversion/dorsiflexion and wall calf raises are all desk-doable at work. Brace ON during all exercises'+(ap==='A2'?'; mild burn = correct, sharp pain = STOP':'')+'.</div><div class="alt">Red flags → stop + regress one phase: any swelling return · sharp pain (not muscle burn) · ankle giving out · the "different" feeling worsening. Full table in ☰ Plans → Ankle.</div>'};
+}
+const ankleBed='<li><b>Ankle bed mobility</b>: circles 20 × 2 each direction + point &amp; flex 15 × 2 (the day\u2019s closing bookend)</li>';
+
+/* ---------- MEALS (unchanged — from lifestyle plan grid) ---------- */
+const MACROS={bf:'350–420 kcal · P 20–25 g · C 35–45 g · Fe 6–8 mg',lu:'500–580 kcal · P 25–30 g · C 55–65 g · Fe 8–12 mg',di:'380–450 kcal · P 20–25 g · C 35–45 g · Fe 5–7 mg',sn:'150–200 kcal · P 8–12 g · low GI'};
+const BF_ALT='Option pool: ragi overnight-oats power bowl · pesarattu + egg bhurji · ragi idli + sambar + eggs · oats upma + spinach omelette (luteal) · ragi porridge + sprouted moong (menstruation, no-egg) · tofu scramble + jowar dosa (festival) · boiled eggs + ragi ladoos + guava (quickest).';
+const LU_ALT='Option pool: ragi sangati + palak pappu + drumstick sambar (menstruation, max iron) · brown rice + gongura pappu + egg curry · jowar roti + rajma + spinach (follicular) · bajra roti + chana dal + methi (luteal) · brown rice + egg curry + beans palya · samai + moong dal + drumstick koora (ovulation) · full Telugu thali (Sunday).';
+const DI_ALT='Option pool: jowar roti + methi dal + raita · egg curry + 2 rotis + tomato salad · millet khichdi + yogurt · palak dal + brown rice + sesame (menstruation) · tomato bath + boiled egg (follicular) · egg-veg stir-fry + 1 roti (luteal, lower carb) · samai pulao + rajma (festival).';
+const WEEKMEALS={
+ 0:{pre:'½ overnight oats + 1 boiled egg (~180 kcal)',bf:['Ragi dosa + tomato chutney (post-workout full meal)','Iron: ragi · Vit C: tomato'],lu:['Brown rice + palak pappu + drumstick sambar + yogurt + 1 tsp ghee tadka','Iron: palak+dal · yogurt at the end (calcium competes with iron)'],di:['Jowar roti + methi dal + cucumber raita + lemon on dal','Low-GI · Iron: methi · Vit C: lemon'],sn:'Roasted chana + almonds'},
+ 1:{bf:['Full overnight oats (ragi + 5 g jaggery + seed-cycle seeds) + 2 eggs scrambled','Iron: ragi+sesame · low GI'],lu:['Ragi sangati + gongura pappu + roasted brinjal + yogurt + ghee','Signature Telugu · Iron: gongura'],di:['Veg egg fried rice (brown) + dal soup','Protein: egg · packs well'],sn:'Pumpkin + sunflower seeds + guava'},
+ 2:{pre:'1 ragi ladoo + soaked almonds (~180 kcal)',bf:['Pesarattu (green moong) + ginger chutney (post-workout)','Iron: moong · protein-rich'],lu:['Jowar roti + rajma curry + spinach stir-fry + yogurt + ghee','Iron: rajma + spinach'],di:['Egg curry + 2 small rotis + tomato-onion salad','Protein: egg · Vit C: tomato'],sn:'1–2 dates + walnuts (occasional-date day)'},
+ 3:{bf:['Full oats (amla powder + seed-cycle seeds + yogurt stirred in) + 2 boiled eggs','Vit C: amla → iron absorption ↑↑'],lu:['Brown rice + sambar + beans palya + yogurt + ghee','Iron: beans · probiotic: yogurt'],di:['Bajra/samai khichdi + roasted papad + lemon squeeze','Low GI · Vit C: lemon'],sn:'Roasted groundnuts + apple'},
+ 4:{pre:'½ oats + 1 boiled egg (~180 kcal)',bf:['Ragi idli ×3 + sambar + coconut chutney (post-workout)','Fermented = gut health · Iron: ragi'],lu:['Ragi sangati + nuvvula pachadi + egg curry + yogurt + ghee','Iron: sesame+ragi · protein: egg'],di:['Tomato rice (brown) + boiled egg + cucumber salad','Vit C: tomato'],sn:'Roasted chana + amla juice (iron-boost day)'},
+ 5:{bf:['Full oats (5 g jaggery + seed-cycle seeds) + 2-egg omelette + amla juice','Vit C: amla · Iron: sesame'],lu:['Pesarattu + upma + gongura chutney + yogurt + ghee','Weekend special · Iron: gongura'],di:['Light dal rice + methi stir-fry + yogurt (home dinner)','Iron: methi'],sn:'Mixed seeds + 1–2 dates + almonds'},
+ 6:{bf:['Full oats (seed-cycle seeds) + 2 boiled eggs + guava/apple','Easy rest day · iron-rich'],lu:['Full Telugu thali: brown rice + rasam + koora + pappu + yogurt + ghee','Comfort + nourishing'],di:['Jowar roti + palak dal + small yogurt','Iron: palak · light close'],sn:'Roasted groundnuts + apple or pear'}
+};
+const MEALRULES='<div class="why">PCOS rules: never carbs alone · ≤40 g carbs per sitting · no tea/coffee within 1 hr of any meal (iron) · pair every iron source with Vit C · yogurt at meal-end.</div>';
+function mealCard(kind,day){
+  const m=WEEKMEALS[day], map={bf:['Breakfast',m.bf],lu:['Lunch · biggest meal',m.lu],di:['Dinner at work · lighter',m.di]};
+  const pair=map[kind],label=pair[0],dish=pair[1][0],note=pair[1][1];
+  const alt={bf:BF_ALT,lu:LU_ALT,di:DI_ALT}[kind];
+  return{t:label+' · '+dish.split('(')[0].split('+')[0].trim()+'…',c:'meal',d:'<ul><li><b>'+dish+'</b></li><li>'+note+'</li></ul><div class="macro">'+MACROS[kind]+'</div>'+MEALRULES+'<div class="alt">'+alt+'</div>'};
+}
+function snack530(day){return{t:'5:30 PM snack · '+WEEKMEALS[day].sn,c:'meal',d:'<ul><li><b>'+WEEKMEALS[day].sn+'</b> — keeps blood sugar flat through the shift</li><li>Cold water bottle refill — 2–3 L across the day (hyperhidrosis + energy)</li></ul><div class="macro">'+MACROS.sn+'</div>'};}
+
+/* ---------- WORKOUTS (Month-1 plan + ankle-phase overlay) ---------- */
+const M1={
+ 1:{0:['Walk + breathe · 20 min','Brisk flat walk 20 min · 4-7-8 breathing ×5 rounds · neck/shoulder rolls 2 min'],1:['Morning mobility · 15 min','Cat-cow ×10 · child\u2019s pose + side reach 30 s ×3 · hip circles ×10 · ankle + wrist rolls ×10'],2:['Gentle yoga · 20 min','Mountain pose 2 min · forward fold 45 s ×3 · low lunge 30 s ×2/side · seated twist · legs-up-wall 5 min'],3:['Walk + stretch · 25 min','Brisk walk 20 min (slightly faster than Mon) · quad stretch · calf raises 2×10'],4:['Full-body stretch · 20 min','Knee-to-chest 45 s ×3 · figure-4 45 s ×2/side · chest opener ×3 · thoracic rotation ×10/side'],5:['Longer walk · 25 min','Flat route this cycle (ankle Phase 2/3 — no hills yet) · post-walk stretch 5 min']},
+ 2:{0:['Lower body bodyweight · 30 min','Squats 3×10 (chair height) · glute bridge 3×12 · calf raises 2×15 · wall sit 2×20 s · rest 60 s between sets'],1:['Yoga + breathwork · 25 min','Nadi Shodhana 5 min · slow sun salutation ×2 · Warrior I+II 30 s ×2/side · seated fold 45 s ×3'],2:['Upper + core · 30 min','Wall push-up 3×12 · incline push-up 3×8 if easy · dead bug 3×6/side · superman 3×8'],3:['Active recovery walk · 30 min','Conversational pace 25 min · full stretch 5 min · hydrate 2–3 L'],4:['Full body bodyweight · 30 min','Squat-to-calf-raise 3×10 · bridge march 3×8/side · wall push-up 3×12 · bird-dog 3×8/side'],5:['Yin yoga · 35 min','Butterfly 3 min · dragon 2 min/side · sleeping swan 2 min/side · supine twist · savasana 5 min']},
+ 3:{0:['Lower + band · 40 min','Band squat 3×12 · RDL bodyweight 3×10 · lateral band walk 3×12/way · single-leg bridge 3×8 · figure-4 balance 30 s ×2'],1:['Strength yoga · 35 min','Kapalabhati ×3 · chair pose 30 s ×4 · Warrior II→reverse ×5/side · boat 15 s ×4 · bridge 30 s ×3'],2:['Upper + core + band · 40 min','Knee push-up 3×10 · band pull-apart 3×15 · forearm plank 3×20 s · dead bug (leg low) 3×8 · band OHP 3×12'],3:['Incline walk · 35 min','Gentle incline only if ankle Phase 3 criteria met · conversational pace · stretch 5 min'],4:['Full-body circuit · 40 min','3 rounds: squat 12 · knee push-up 8 · bridge 12 · plank 20 s · 45 s rest between rounds'],5:['Restorative yoga · 35 min','Legs-up-wall 5 min · supported child\u2019s 3 min · reclined bound angle 4 min · yoga nidra 10 min']},
+ 4:{0:['Lower + dumbbells · 45 min','Goblet squat 2 kg 3×12 · RDL 2 kg 3×10 · reverse lunge 3×10/leg — <b>only if ankle Phase 4 (Sep 11+); otherwise static split-squat hold</b> · band bridge 3×15 · slow calf raise 3×15'],1:['Full yoga practice · 35 min','Sun salutations ×5 · Warrior I-II-III ×2/side · boat 20 s ×4 · yin finish 10 min'],2:['Upper + dumbbells · 45 min','Push-up 3×8 · seated DB press 2 kg 3×10 · bent-over row 2 kg 3×10/side · hand plank 3×25 s · slow dead bug 3×6'],3:['Power walk · 35 min','Brisk, arms swinging 30 min · cool-down 5 min'],4:['Full-body circuit wk4 · 45 min','3 rounds: goblet squat 12 · push-up 8–10 · DB row 10/side · band bridge 15 · plank 25 s'],5:['Yoga + breath · 35 min','Your chosen flow 25 min · Nadi Shodhana 10 min — the anxiety keystone']}
+};
+const P2FIT={
+ 0:['Strength · Lower body · 45 min','Goblet/DB squats · RDLs · reverse lunges · glute bridges — moderate weight, add load or 1 rep when all sets clean. Log every session.'],
+ 1:['Restorative yoga · 30 min','4-7-8 pranayama · yin · hip openers — cortisol control during interview season'],
+ 2:['Strength · Upper + core · 45 min','Push-ups · DB rows · shoulder press · planks — posture priority for desk work'],
+ 3:['Walk · active recovery · 30 min','Brisk outdoor + 10 min full-body stretch'],
+ 4:['Strength · Full-body circuit · 45 min','Squats + push-ups + rows + RDL · 3 rounds'],
+ 5:['Dance / vinyasa · 30–40 min','Joyful low-impact cardio — no cortisol-spiking HIIT']};
+function fitCard(ph,wk,day,ap){
+  if(day===6)return{t:'Complete rest',c:'fit',d:'<ul><li>Gentle walk only if desired · painting or reading</li><li>Rest is training — the body rebuilds today</li></ul>'};
+  let src, note='';
+  if(ph==='p1'){const w=Math.min(Math.max(1,wk-1),4);src=M1[w];note='<div class="why">Month-1 Week-'+w+' · Ankle overlay: brace ON for all lower-body work · currently in '+ANKLE_NAME[ap]+'. Jump/run moves stay out until ankle Phase 4 activity gates.</div>';}
+  else src=P2FIT;
+  const pair=src[day],t=pair[0],body=pair[1];
+  return{t:t,c:'fit',d:'<ul><li>'+body+'</li><li>Cool/lukewarm shower after — never hot (hyperhidrosis)</li><li>AC or shaded space · cold water bottle + cotton towel</li></ul>'+note+(ph!=='p1'?'<div class="why">Strength 3×/wk is the primary insulin-resistance intervention — prioritise over cardio; skip HIIT (cortisol). Ankle: '+ANKLE_NAME[ap]+'.</div>':'')};
+}
+
+/* ---------- STUDY ---------- */
+const DSA_TOPICS=['Arrays & two pointers','Sliding window & strings','HashMaps & prefix sums','Linked lists','Stacks & queues','Binary search','Trees & BST','Traversals + BFS/DFS','Graphs I','Graphs II + topo sort','Heaps & intervals','Greedy','DP I','DP II','Backtracking','Tries','Nvidia patterns','Microsoft sets','Microsoft sets II','Google sets','Google sets II','Google sets III','Mixed hard review','Maintenance'];
+const SD_TOPICS=['Scale & estimation','Caching & CDNs','SQL vs NoSQL, sharding','Queues & async — your Redis Streams work','API design & rate limiting','Microservices & consistency','Design: shortener, feed','Design: chat, notifications','RAG at scale','LLM routing & multi-cloud — your Arhasi gold','Agentic system design','Mock designs','Mock designs II','Company-specific review'];
+/* AWS 9-day plan cards by date (official plan; hours compress on office days) */
+function awsCard(dt,slot){ /* slot: 'am'|'pm' */
+  const d=dt.getDate(); /* Aug 15..22 */
+  const plans={
+   15:{am:'<b>Day 2 · Domain 1 + 3 intensive.</b> Maarek at 1.5×: Organizations, SCPs, Control Tower (30 min) · cost optimization, caching, Lambda tuning (30 min) · detailed notes',pm:'80 practice Qs: <b>40 Domain 1 + 40 Domain 3</b> · max 3 min/Q · FLAG if stuck · read EVERY explanation · evening: AWS Organizations FAQ + Cost Optimization whitepaper + review flagged'},
+   16:{am:'<b>Day 3 · Mixed + Mock #2.</b> 2 hrs: review yesterday\u2019s top-20 hardest D1/D3 misses — re-read explanations',pm:'150 mixed Qs, STRICT 2.4 min/Q, practice FLAG→SKIP→RETURN · then Timed Mode Set 2 (75 Q / 180 min, aim finish in 150) · review Set 2 immediately, domain-by-domain'},
+   17:{am:'<b>Day 4 · Mixed drilling (office day — compressed).</b> Review yesterday\u2019s mistakes 1 hr',pm:'Mixed Qs at strict 2.4 min pace in remaining blocks · flag-log every miss'},
+   18:{am:'<b>Day 5 · Precision drilling.</b> Flashcard blitz: 30 key concepts — SCPs, Transit Gateway, DMS vs DataSync, 6Rs, optimization patterns · repeat weak cards 3×',pm:'Weak-domain Qs: if D1 &lt; 60% → 50 D1 Qs · if D3 &lt; 65% → 50 D3 Qs · rest mixed'},
+   19:{am:'<b>Day 6 · Precision drilling.</b> Flashcards again · then Timed Set 3 / full mock #3 if time',pm:'Full-mock pacing practice + immediate review · identify remaining gaps'},
+   20:{am:'<b>Day 7 · Confidence phase (8 hrs total — lighter).</b> 50-Q mixed drill, timed · target 75%+',pm:'Review worst 20 Qs · skim AWS FAQs 30 min · flashcards 30 min · rest'},
+   21:{am:'<b>Day 8 · Light review only.</b> 50-Q drill if fresh, else flashcards',pm:'2 AWS architecture blog posts · pack for tomorrow · early wind-down · NO cramming'}
+  };
+  const p=plans[d]||plans[18];
+  return {t:slot==='am'?'AWS 9-Day Plan · morning block':'AWS 9-Day Plan · question blocks',c:'prep',d:'<ul><li>'+(slot==='am'?p.am:p.pm)+'</li></ul><div class="why">Baseline TD Set 1: 45%. Critical: <b>Domain 1 (30.77%) + Domain 3 (36%)</b>. Domain 4 already strong (77.78% — up from 60%). Time management is the real enemy: 2.4 min/Q, FLAG→SKIP→RETURN, finish in 150 min, review flagged in final 30.</div><div class="alt">Office days (Mon–Fri): the official plan\u2019s 12–13 hr days only fit if on leave — otherwise compress to these marked blocks and protect the mocks on Sat/Sun.</div>'};
+}
+function studyCard(ph,wk,day){
+  const d1=DSA_TOPICS[Math.min(wk-2,DSA_TOPICS.length-1)],s1=SD_TOPICS[Math.min(Math.floor((wk-2)/2),SD_TOPICS.length-1)];
+  const alt=(day%2===0);
+  const isGoogleWeek=(wk>=13&&wk<=15);
+  const googleAI=isGoogleWeek?'<li style="margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)"><b>[AI FLUENCY - GOOGLE PREP] 25 min extra</b> — replaces or supplements GenAI block this week<ul style="margin-top:5px"><li>Prompt engineering drill: give Claude/Gemini a buggy code snippet, get 5 different fixes, rank them</li><li>Output validation: run AI suggestions, spot the subtle error (off-by-one, edge case miss, inefficiency)</li><li>Code review flow: read real code, use AI as a tool (not a crutch), challenge its output</li><li>This week ('+wk+'): focus on '+(wk===13?'prompt clarity':wk===14?'validation rigor':'edge-case hunting')+'</li></ul></li>':'';
+  return{t:'Study · '+(isGoogleWeek?'[GOOGLE] AI Fluency + ':'')+'DSA ('+d1+') + '+(alt?'System Design':'GenAI track'),c:'prep',d:'<ul><li><b>DSA (Java) 50 min</b> — 1 new + 1 error-log redo · topic: '+d1+'</li><li><b>'+(alt?'System Design 40 min — '+s1+'; anchor to your production systems':'GenAI/Backend 40 min — Track 5: agentic patterns, evals, serving')+'</b></li>'+googleAI+'</ul><div class="why">Fed + post-exercise ≈ peak focus window per your lifestyle plan. SD and GenAI alternate by day; DSA is daily and is the last block you\u2019re allowed to cut.'+(isGoogleWeek?' — AI fluency is the new gate for Google (H2 2026 rollout for mid-level roles). Your Arhasi LLM routing experience is gold here.':'')+'</div>'};
+}
+
+/* ---------- FIXED DAY PIECES ---------- */
+const HOBBY={t:'Hobby buffer · painting / reading / sewing',c:'rest',d:'<ul><li>Or a 15-min stroll — this buffer measurably lowers pre-work anxiety</li><li>Flow state = cortisol drop; guard this slot</li></ul>'};
+const READY={t:'Get ready + 4-7-8 breathing',c:'rest',d:'<ul><li>Pack dinner + 5:30 snack · freshen up</li><li><b>4-7-8 breathing</b> (4 in · 7 hold · 8 out) ×4 — non-negotiable pre-work anxiety reset</li></ul>'};
+const WORKBLOCK={t:'Work · Arhasi (3 PM – 1 AM)',c:'work',d:'<ul><li>Cold water bottle at desk — 2–3 L across the shift</li><li>No caffeine after dinner — tulsi or chamomile only</li><li>~10:30 PM: 5-min walk + ankle circles (glucose disposal + stiffness)</li></ul>'};
+function windDown(day){
+  const slots=[];
+  slots.push(['1:00',{t:'Work ends · optional seed snack',c:'meal',d:'<ul><li>If hungry: small handful pumpkin/sunflower seeds — magnesium for sleep + anxiety</li><li>Nothing else — the 12-hr overnight fast to breakfast protects insulin sensitivity</li></ul>'}]);
+  slots.push(['1:10',{t:'PM skincare'+(day===5?' + weekly clay mask':''),c:'care',d:skinPM(day)}]);
+  slots.push(['1:25',{t:'Diary + ankle bed mobility · no screens',c:'rest',d:'<ul><li>Brain-dump the day — measurably reduces next-day anxiety</li>'+ankleBed+'<li>Dim lights · novel, not phone · cooler room (hyperhidrosis + deeper sleep)</li></ul>'}]);
+  if(day===4)slots.push(['1:35',OILNIGHT]);
+  slots.push(['1:45',{t:'Sleep · 1:45 – 9:00 AM (7¼ hrs)',c:'rest',d:'<ul><li>Fixed window all 7 days — consistent wake time anchors the nervous system</li><li>Poor sleep directly worsens insulin resistance — this is treatment, not rest</li></ul>'}]);
+  return slots;
+}
+
+/* ---------- DAY BUILDER ---------- */
+function buildDay(dt){
+  const ph=phaseOf(dt),day=(dt.getDay()+6)%7,wk=Math.floor((dt-START)/6048e5)+1,ap=anklePhaseOf(dt);
+  const A=(day===0||day===2||day===4); const slots=[];let note='';
+  const S=(t,c)=>{if(c)slots.push([t,c]);};
+
+  if(ph==='p0'&&day===5){
+    note='<b>EXAM DAY · SAP-C02.</b> Strategy: read fully, no rushing · easy 1–1.5 min · medium 2–3 min · hard = FLAG immediately → skip → return in final 30 · finish all 75 in 150 min. Hair wash moves to tomorrow this one week.';
+    S('8:00',{t:'Wake + lemon water + AM skincare',c:'drink',d:'<ul><li>Lemon water within 5 min of waking</li></ul>'+skinAM});
+    S('8:30',mealCard('bf',5));
+    S('9:15',{t:'NO studying — mental prep only',c:'prep',d:'<ul><li>The official plan is explicit: do not study on exam day. Rest + 4-7-8 breathing.</li><li>You\u2019ve done 400+ questions. Trust the training.</li></ul>'});
+    S('exam',{t:'SAP-C02 — target 750+',c:'prep',d:'<ul><li>FLAG→SKIP→RETURN on anything &gt; 3 min</li><li>Finish in 150 · review flagged in final 30 with fresh mind</li><li>Domain 4 went 60% → 77.78% with focused work — the same happened to D1/D3 this week.</li></ul>'});
+    S('after',{t:'Celebrate + true rest',c:'rest',d:'<ul><li>No study, no workout · something joyful</li></ul>'});
+    return{note,slots};
+  }
+  if(ph==='p0'&&day===6){
+    note='Post-exam Sunday: hair wash (moved), Sunday batch prep, and the interview sprint + Month-1 workouts start Monday. Ankle: Phase 3 begins — progressive strengthening.';
+    S('9:30',morningDrink()); S('9:45',ankleMorning(ap));
+    S('10:00',mealCard('bf',6)); S('10:15',seedCard());
+    S('11:00',{t:'Hair wash · Sebamed + Livon + clay mask',c:'care',d:'<ul><li>'+HAIR[5]+'</li></ul>'+skinPM(5)});
+    S('12:30',ankleBalance(ap));
+    S('1:30',mealCard('lu',6));
+    S('3:00',{t:'Sunday batch prep',c:'rest',d:'<ul><li>Ragi ladoos ×14 · boiled eggs ×6 · sprouted moong · pesarattu batter · grind flax</li><li>Soak overnight: almonds 6–8 + methi seeds 1 tsp (separate bowls)</li></ul>'});
+    S('5:00',{t:'Weekly review · 15 min',c:'rest',d:'<ul><li>Baseline weight logged · ankle Phase-2 exit check: balance 30+ s · "different" feeling 7–8/10 · zero swelling · 15-min walk comfortable</li><li>Order resistance bands if not yet done (₹300–500, Amazon.in — essential for ankle Phase 3)</li></ul>'});
+    S('7:30',mealCard('di',6)); S('11:30',{t:'PM skincare + early sleep',c:'care',d:skinPM(6)});
+    return{note,slots};
+  }
+
+  S('9:00',morningDrink());
+  S('9:10',ankleMorning(ap));
+
+  if(ph==='p0'){
+    note='<b>Cert sprint — the 9-day plan owns every study minute.</b> D1 (30.77%) + D3 (36%) are the critical gaps; D4 is already strong. Fitness = ankle protocol only. '+ANKLE_NAME[ap]+'.';
+    S('9:20',mealCard('bf',day)); S('9:35',seedCard());
+    S('10:00',awsCard(dt,'am'));
+    S('11:30',{t:day in HAIR?'Shower + hair wash':'Shower (hair rest day)',c:'care',d:day in HAIR?'<ul><li>'+HAIR[day]+'</li></ul>':'<ul><li>Cool/lukewarm only — hyperhidrosis rule</li></ul>'});
+    S('12:00',awsCard(dt,'pm'));
+    S('1:15',ankleBalance(ap));
+    S('1:30',mealCard('lu',day));
+    S('2:45',READY); S('3:00',WORKBLOCK);
+    S('5:15',ankleEvening(ap,day));
+    S('5:30',snack530(day));
+    S('7:30',Object.assign({},mealCard('di',day),{t:mealCard('di',day).t.replace('Dinner at work','Dinner break 7:30–8:30')}));
+    windDown(day).forEach(s=>slots.push(s));
+    return{note,slots};
+  }
+
+  if(day===5){
+    note=(ph==='p2')?'<b>Mock-interview Saturday.</b> Camera on, timed, real conditions. Schedule B: breakfast → digest → movement. '+ANKLE_NAME[ap]+'.':'Schedule B Saturday: breakfast → digest → dance/yoga · deep-work afternoon. '+ANKLE_NAME[ap]+'.';
+    S('9:20',mealCard('bf',5)); S('9:35',seedCard());
+    S('9:40',{t:'Eat · rest · digest (60–70 min)',c:'rest',d:'<ul><li>Novel, journal, or just sit — low-intensity movement needs a fed gap</li></ul>'});
+    S('10:30',fitCard(ph,wk,5,ap));
+    S('11:15',{t:'Shower + hair wash · Sebamed + Livon',c:'care',d:'<ul><li>'+HAIR[5]+'</li></ul><div class="alt">Optional pre-wash: weekly SCALP glycolic — cotton pad on scalp sections (not lengths), 5–10 min max, then shampoo out. Keep on a different day from any face-glycolic night.</div>'});
+    S('12:30',ankleBalance(ap));
+    S('12:45',ph==='p2'?{t:'Mock interview · 60 min + 30 min debrief',c:'prep',d:'<ul><li>Alternate weekly: DSA mock ↔ system-design mock</li><li>Debrief immediately into the error log</li><li>Focus: Nvidia (wks 9–10) → Microsoft (11–12) → Google (13–15)</li></ul>'}:{t:'Deep revision block · 2 hrs',c:'prep',d:'<ul><li>Redo the week\u2019s hardest problems from scratch</li><li>One timed system-design write-up</li></ul>'});
+    S('1:30',mealCard('lu',5));
+    S('2:30',{t:'Hobby · sewing / painting / die-cast time',c:'rest',d:'<ul><li>Protected joy slot — flow state is cortisol treatment</li></ul>'});
+    S('4:30',ph!=='p3'?{t:'Behavioral prep · 45 min',c:'prep',d:'<ul><li>STAR stories: Data Steward agent · Redis Streams pipeline · multi-cloud routing</li><li>Your production war stories ARE the differentiator</li></ul>'}:{t:'Free afternoon',c:'rest',d:'<ul><li>Phase 3 earns leisure back</li></ul>'});
+    S('5:15',ankleEvening(ap,5));
+    S('5:30',snack530(5));
+    S('7:30',Object.assign({},mealCard('di',5),{t:'Home dinner · light dal rice + methi'}));
+    S('11:00',{t:'PM skincare + weekly clay mask',c:'care',d:skinPM(5)});
+    S('11:20',{t:'Ankle bed mobility + sleep — fixed window',c:'rest',d:'<ul>'+ankleBed+'<li>Consistent wake anchors the nervous system even on weekends</li></ul>'});
+    return{note,slots};
+  }
+  if(day===6){
+    note='Complete rest + Sunday batch prep. No shampoo, no oil, no training, no study guilt. Ankle: circles + P&amp;F still run (daily bookends); optional balance only.';
+    S('9:20',mealCard('bf',6)); S('9:35',seedCard());
+    S('10:30',{t:'Gentle walk (optional) · diary review',c:'rest',d:'<ul><li>Only if desired · painting or reading otherwise</li></ul>'});
+    S('12:30',{t:'Ankle · optional balance (rest-day dose)',c:'ankle',d:'<ul><li>Standing single-leg balance 20–30 s × 4–5 — optional today per plan (Sunday = ankle rest day)</li></ul>'});
+    S('1:30',mealCard('lu',6));
+    S('3:00',{t:'Sunday batch prep',c:'rest',d:'<ul><li>Ragi ladoos ×14 · boiled eggs ×6 · sprouted moong · pesarattu batter · grind flax</li><li>Soak overnight: almonds 6–8 + methi seeds 1 tsp (separate bowls)</li><li>Palak: buy half now, half mid-week (wilts by day 3)</li></ul>'});
+    S('5:00',{t:'Weekly review · 15 min',c:'rest',d:'<ul><li><b>Log:</b> Saturday weight · workouts /5 active days · study hrs · <b>ankle: balance hold sec + "different" feeling /10 + swelling + pain</b> · cycle phase</li><li>2+ wks stalled weight → recheck portions · missed workouts → shrink, never skip · backlog → cut GenAI first, never DSA</li></ul>'});
+    S('5:30',snack530(6));
+    S('7:30',Object.assign({},mealCard('di',6),{t:'Home dinner · jowar roti + palak dal'}));
+    S('11:00',{t:'PM skincare + early sleep',c:'care',d:skinPM(6)});
+    return{note,slots};
+  }
+
+  note=(A?'<b>Schedule A</b> — light snack → strength → post-workout breakfast. ':'<b>Schedule B</b> — full breakfast → digest → gentle movement. ')+ANKLE_NAME[ap]+'. ';
+  if(ph==='p1')note+=(wk<=2?'Month-1 Week-1 "Reawaken" + deficit starts. Rule: soreness that stops tomorrow\u2019s session = too hard.':'Month-1 progression. Ankle Phase-3 criteria (not vibes) gate the harder moves.');
+  if(ph==='p2'){
+    note+='Interview peak. <b>Interview-week override:</b> real loop week → 2 maintenance workouts · targeted prep only · sleep by 12:30 · maintenance calories ±3 days.';
+    if(wk===7)note+=' <span style="color:var(--drink);font-weight:700;display:block;margin-top:8px">⚠️ CHECKPOINT: Verify current interview formats. Check Exponent Google 2026 · IGotAnOffer Microsoft/Nvidia guides. Watch for Nvidia team-specific changes, Microsoft Copilot scope, Google code-comprehension pilot expansion.</span>';
+    if(wk===10)note+=' <span style="color:var(--drink);font-weight:700;display:block;margin-top:8px">⚠️ PRE-MICROSOFT: Verify if your team uses AI-assisted rounds (Copilot in VS Code). Ask recruiter explicitly — scope is still team-specific.</span>';
+    if(wk===12)note+=' <span style="color:var(--drink);font-weight:700;display:block;margin-top:8px">⚠️ PRE-GOOGLE: Confirm code-comprehension round is in your loop. Gemini fluency + AI output validation = differentiator. Weave your Arhasi LLM routing war stories in.</span>';
+  }
+  if(ph==='p3')note+='Fitness-dominant: progressive overload logged every session; deficit to 15 kg (~March) then reverse-diet.';
+
+  if(A){
+    S('9:20',{t:'Pre-workout light snack · '+WEEKMEALS[day].pre,c:'meal',d:'<ul><li><b>'+WEEKMEALS[day].pre+'</b></li><li>40-min gap before lifting</li></ul><div class="why">Never train fully fasted — it worsens insulin resistance. The full breakfast comes AFTER the workout.</div>'});
+    S('10:00',fitCard(ph,wk,day,ap));
+    S('10:55',{t:day in HAIR?'Cool shower + hair wash':'Cool shower',c:'care',d:day in HAIR?'<ul><li>Lukewarm only (hyperhidrosis) · dry fully</li><li>'+HAIR[day]+'</li></ul>':'<ul><li>Lukewarm only · dry fully</li></ul>'});
+    S('11:20',mealCard('bf',day)); S('11:35',seedCard());
+    S('12:00',studyCard(ph,wk,day));
+  }else{
+    S('9:20',mealCard('bf',day)); S('9:35',seedCard());
+    S('9:40',{t:'Eat · rest · digest (60–70 min)',c:'rest',d:'<ul><li>Novel, journal, sit — the fed gap makes 10:30 movement safe</li></ul>'});
+    S('10:30',fitCard(ph,wk,day,ap));
+    S('11:15',{t:'Light freshen up',c:'care',d:'<ul><li>No heavy sweat expected · hair rest day</li></ul>'});
+    S('11:30',studyCard(ph,wk,day));
+  }
+  S('1:15',ankleBalance(ap));
+  S('1:30',mealCard('lu',day));
+  S('2:15',HOBBY);
+  S('2:45',READY);
+  S('3:00',WORKBLOCK);
+  S('5:15',ankleEvening(ap,day));
+  S('5:30',snack530(day));
+  S('7:30',Object.assign({},mealCard('di',day),{t:mealCard('di',day).t.replace('Dinner at work','Dinner break 7:30–8:30')}));
+  windDown(day).forEach(s=>slots.push(s));
+  return{note,slots};
+}
+
+/* ---------- REFERENCE DRAWER CONTENT ---------- */
+const REF={
+skin:{name:'Skincare',html:'<div class="srcnote">Source: Skincare_Schedule.docx — oily, PCOS, hyperpigmentation-prone · Hyderabad climate</div>'
++'<h3>Morning</h3><ol><li>Minimalist Oat Extract Cleanser</li><li>Pat dry</li><li>Minimalist Vitamin C 10% — 2–3 drops — wait 10 min</li><li>Excela Moisturiser</li><li>Derma Co SPF 60 — last step always</li><li>Sebamed Lip Defence SPF 30</li></ol>'
++'<h3>Night — Standard (most nights)</h3><ol><li>Suganda Squalane Cleansing Oil — makeup days only</li><li>CeraVe SA Smoothing Cleanser</li><li>Pat dry</li><li>WildOak Ginseng Toner — wait 2 min (until finished, then skip)</li><li>Niacinamide 10% + Zinc — wait 10 min</li><li>Excela</li></ol>'
++'<h3>Night — Glycolic (1–2 nights/month max: post-travel or bad skin week)</h3><ol><li>Suganda (makeup days)</li><li><b>Minimalist Oat Cleanser</b> — not CeraVe SA tonight</li><li>Pat dry — wait 5 full min, completely dry</li><li>True Therapy Glycolic 10% Toner — cotton pad, avoid eyes + active breakouts — wait 10 min</li><li>COSRX Snail 96 Mucin — stop here. No Excela, no Niacinamide, no WildOak</li><li>Next morning: SPF 60 non-negotiable</li></ol>'
++'<h3>Night — Recovery (snail only)</h3><ol><li>Suganda (makeup days)</li><li>CeraVe SA</li><li>COSRX Snail 96 Mucin — stop here</li></ol>'
++'<h3>Weekly — Clay mask (replaces one standard night)</h3><ol><li>Cleanse as standard</li><li>Kaolin Clay 4% — 10–15 min, rinse</li><li>Niacinamide — wait 10 min</li><li>Excela · No WildOak tonight</li></ol>'
++'<h3>Weekly — Scalp glycolic (separate day from face glycolic)</h3><ol><li>Section dry/slightly damp hair</li><li>Glycolic toner on cotton pad — scalp sections only, not lengths</li><li>5–10 min max → shampoo out → conditioner on lengths only</li></ol>'
++'<h3>Midday</h3><ul><li>No makeup + sweat: Banjara Rose Water mist → pat dry → reapply SPF 60</li><li>Light makeup: Simple Micellar Water 2 passes → SPF 60</li><li>Full makeup: blot sheet → Derma Co Compact Powder SPF 50</li><li>SPF every 2 hrs if outdoors continuously · Lip Defence as needed</li></ul>'
++'<h3>Never combine same night</h3><ul><li>Glycolic + Niacinamide · Glycolic + CeraVe SA · Glycolic + WildOak · Glycolic + Vit C · Clay + Glycolic · Face glycolic + scalp glycolic</li></ul>'
++'<h4>Key notes</h4><ul><li>Waits are critical: Vit C 10 min · Niacinamide 10 min · Glycolic 10 min</li><li>3-month check-in: hyperpigmentation, breakouts, barrier health</li></ul>'},
+hair:{name:'Hair Care',html:'<div class="srcnote">Source: Hair_Care_Protocol_3Month.docx · v2 (Aug 15, 2026) — oil updated to Rosemary + Jojoba + Grapeseed</div>'
++'<h3>Weekly at a glance</h3><table><tr><th>Day</th><th>Routine</th></tr><tr><td>Mon</td><td>Sebamed → conditioner (ends) → optional evening Livon</td></tr><tr><td>Tue</td><td>REST</td></tr><tr><td>Wed</td><td>Nizoral 2% (leave 5 min) → conditioner → optional Livon</td></tr><tr><td>Thu</td><td>REST</td></tr><tr><td>Fri</td><td>Oil at night — 3–4 drops, scalp, 8–12 hrs (doc window 6–8 PM; on office Fridays the 1:35 AM post-shift slot still gives ~9 hrs)</td></tr><tr><td>Sat</td><td>Sebamed → conditioner → Livon on damp ends (weekend ready)</td></tr><tr><td>Sun</td><td>REST — no shampoo, no oil</td></tr></table>'
++'<h3>v2 oil blend (100 ml batch)</h3><ul><li><b>2 mL rosemary essential oil (≈40 drops) + 49 mL jojoba + 49 mL grapeseed</b> = 2% blend</li><li>Dark glass dropper bottle · shake 30 s · rest 24 hrs before first use · patch test inner forearm 24 hrs</li><li>Why: jojoba mimics sebum (prevents rebound oiliness) · grapeseed ultra-light, anti-inflammatory, non-comedogenic · 2% rosemary is the dermatologist-confirmed effective range</li></ul>'
++'<h3>Wash technique (every wash)</h3><ul><li>Warm water shampoo · cool water rinse · pea-size conditioner ends only 2–3 min · cool final rinse · air dry</li></ul>'
++'<h3>Costs</h3><ul><li>Sebamed ₹400/mo · Nizoral ₹350/mo · Soultree ₹50–65/mo · oil blend ₹110–160/mo → total ≈ ₹960–1,015/month</li></ul>'
++'<h3>4-month reassessment (Nov 30, 2026)</h3><table><tr><th>Result</th><th>Action</th></tr><tr><td>50%+ hair-fall reduction</td><td>Continue as-is · next check 6 mo</td></tr><tr><td>30–40%</td><td>Continue + consider WishCare serum (₹350/mo) 3 more months</td></tr><tr><td>&lt;30%</td><td>Escalate: dermatologist for Minoxidil 2% / Spironolactone</td></tr><tr><td>Worsening / irritation</td><td>Troubleshoot immediately (patch-test check incl. grapeseed) · dermatologist if persists</td></tr></table>'
++'<h4>Track weekly</h4><ul><li>Hair-fall (heavy/medium/light) · scalp condition · frizz /10 · side effects · monthly check-ins Aug 31, Sep 30, Oct 31, Nov 30</li></ul>'},
+ankle:{name:'Ankle Recovery',html:'<div class="srcnote">Source: Ankle_recovery_plan.docx — Grade 1 lateral sprain re-injury protocol · 16 weeks</div>'
++'<h3>Timeline</h3><table><tr><th>Phase</th><th>Dates</th><th>Focus</th></tr><tr><td>1</td><td>Aug 4–10</td><td>PEACE protocol — COMPLETED ✓ (zero swelling by Day 3)</td></tr><tr><td>2</td><td>Aug 10–21</td><td>Gentle strength + proprioception</td></tr><tr><td>3</td><td>Aug 21–Sep 11</td><td>Progressive strengthening (bands*)</td></tr><tr><td>4</td><td>Sep 11–Oct 2</td><td>Activity return: swim → bike → treadmill → walk-jog</td></tr><tr><td>5</td><td>Oct 2–Nov 13</td><td>Running progression + brace strategy</td></tr><tr><td>∞</td><td>Nov 13+</td><td>Lifetime maintenance 2×/week (~20 min)</td></tr></table>'
++'<p><b>Root cause of re-injury:</b> proprioceptors never fully rehabilitated after injury #1 — ankle felt healed, sensors were offline. *Order a 3-band resistance set (₹300–500, Amazon.in) before Week 3 ends.</p>'
++'<h3>Phase 2 daily structure (adapted to your shift)</h3><table><tr><th>Official slot</th><th>Your slot</th><th>Content</th></tr><tr><td>Morning 6–7 AM</td><td>9:10 AM</td><td>Circles 20×2 + Point&amp;Flex 15×2</td></tr><tr><td>Midday 12–1 PM</td><td>1:15 PM</td><td>Single-leg balance 20–30 s × 8–10</td></tr><tr><td>Evening 5–6 PM</td><td>5:15 PM at desk</td><td>M/W/F/Sa: eversion 12–15×3 + calf raises 15×2 + leg lift · Tu/Th: dorsiflexion 12×3 + alphabet</td></tr><tr><td>Bed 9–10 PM</td><td>1:25 AM wind-down</td><td>Circles + P&amp;F</td></tr></table>'
++'<h3>No-band substitutes</h3><ul><li><b>Eversion (most critical — the movement that failed):</b> uninjured foot against outer edge of injured foot, push outward, hold 3–5 s · or dupatta/towel loop</li><li><b>Dorsiflexion:</b> folded dupatta loop around ball of foot</li><li><b>Plantarflexion:</b> water-bottle between feet</li><li><b>Staircase heel drops:</b> Phase 3 Week 4+ ONLY</li></ul>'
++'<h3>Phase gates</h3><ul><li><b>P2→P3:</b> balance 30+ s · "different" feeling 7–8/10 · zero swelling · 15-min walk comfortable</li><li><b>P3 adds:</b> eversion 15–18 reps · pillow balance · arm-movement balance · single-leg calf raises + step-ups Week 5+ only</li><li><b>P4 activities:</b> swim (wk7) → bike (wk8) → treadmill (wk8–9) → walk-jog 30 s/1 min ×8 (wk9–10, only if treadmill pain-free)</li><li><b>P5 running:</b> flat → hills → varied terrain → figure-8s → normal by Week 16 (Nov 6–13)</li></ul>'
++'<h3>Brace strategy</h3><ul><li>Exercises: ON through Phase 3 · Daily life: reduce indoors Week 3+, none by Phase 5 · Running: ON till Oct 23, optional after · Sports: ON indefinitely (6–12 months minimum)</li></ul>'
++'<h3>Red flags — stop + regress one phase</h3><table><tr><th>Flag</th><th>Action</th></tr><tr><td>Swelling returns (even 1–2/10)</td><td>Stop · elevate + ice · regress 1 phase</td></tr><tr><td>Sharp pain (not muscle burn)</td><td>Stop · rest 48 hrs · reassess</td></tr><tr><td>Ankle gives out during balance</td><td>Return to Phase 2 balance only</td></tr><tr><td>"Different" feeling worsens</td><td>Reduce intensity · more mobility</td></tr><tr><td>Swelling not resolving in 2–3 hrs / pain rising week-on-week</td><td>Medical evaluation — Apollo / Yashoda ortho + physio</td></tr></table>'
++'<h3>Lifetime maintenance (2×/wk forever)</h3><ul><li>Calf raises 15×2 · single-leg calf 12×2 · balance flat 30 s ×5 · balance pillow 20–30 s ×3 · eversion 12×2 · lateral walks 15×2 · circles+alphabet daily AM</li></ul>'},
+aws:{name:'AWS 9-Day',html:'<div class="srcnote">Source: AWS_SAP-C02_9-Day_Study_Plan.docx · exam Aug 22, 2026 IST</div>'
++'<h3>Where you stand</h3><table><tr><th>Domain</th><th>Score</th><th>Status</th></tr><tr><td>1 · Org Complexity</td><td>30.77%</td><td>🔴 CRITICAL — heavy drilling Days 1–2</td></tr><tr><td>2 · New Solutions</td><td>50%</td><td>🟡 Moderate</td></tr><tr><td>3 · Continuous Improvement</td><td>36%</td><td>🔴 CRITICAL — optimization patterns</td></tr><tr><td>4 · Migration</td><td>77.78%</td><td>✅ Strong (was 60%)</td></tr></table>'
++'<p>Baseline TD Timed Set 1: 45% · adjusted capability ~60–68% · target 750/1000 · pass probability with plan: 60–70%.</p>'
++'<h3>Time management (the real enemy)</h3><ul><li>2.4 min/question (75 Q / 180 min) · easy 1–1.5 min · medium 2–3 min · hard: <b>FLAG immediately → skip → return in final 30</b> · finish all 75 in 150 min</li></ul>'
++'<h3>Day-by-day</h3><table><tr><th>Days</th><th>Hours</th><th>Plan</th></tr><tr><td>1–2 · Aug 14–15</td><td>12/day</td><td>Maarek 1.5× (Orgs, SCPs, Control Tower, cost opt) · 80 Qs (40 D1 + 40 D3) · FAQs + whitepapers + flagged review</td></tr><tr><td>3–4 · Aug 16–17</td><td>13/day</td><td>Review top-20 misses · 150 mixed Qs strict pace · Timed Set 2 full mock · immediate domain review</td></tr><tr><td>5–6 · Aug 18–19</td><td>12/day</td><td>Flashcard blitz (30 concepts: SCPs, TGW, DMS vs DataSync, 6Rs) · 120 weak-domain Qs · Set 3 / mock #3 · review</td></tr><tr><td>7–8 · Aug 20–21</td><td>8/day</td><td>50-Q drill (target 75%+) · worst-20 review · light skim · rest + mental prep</td></tr><tr><td>9 · Aug 22</td><td>—</td><td>EXAM. No studying. Trust 400+ questions.</td></tr></table>'
++'<h3>Reminders</h3><ul><li>✅ Read fully, no rushing · practice FLAG→SKIP→RETURN · 2–3 min on every wrong explanation · simulate real conditions</li><li>❌ No memorizing answers · never &gt;3 min on one Q · no studying exam day</li></ul>'},
+meals:{name:'Meals & Macros',html:'<div class="srcnote">Source: Meal Plan, Macros &amp; Phases — 30F · PCOS (IR) · anemia · veg+egg · Telugu · eating window 9:20 AM–12:15 AM</div>'
++'<h3>Daily targets</h3><ul><li><b>1650 kcal</b> · protein 85–95 g (1.4 g/kg) · low-GI carbs 160–180 g · fats 50–60 g · <b>iron 25–30 mg</b> (anemia) · front-load calories before 8 PM</li></ul>'
++'<h3>Per-meal targets</h3><table><tr><th>Meal</th><th>kcal</th><th>P</th><th>C</th><th>Fe</th></tr><tr><td>Breakfast 9:20</td><td>350–420</td><td>20–25</td><td>35–45</td><td>6–8</td></tr><tr><td>Lunch 1:30 (biggest)</td><td>500–580</td><td>25–30</td><td>55–65</td><td>8–12</td></tr><tr><td>Dinner 7:30 (lighter)</td><td>380–450</td><td>20–25</td><td>35–45</td><td>5–7</td></tr><tr><td>Snack 5:30</td><td>150–200</td><td>8–12</td><td>15–20</td><td>—</td></tr></table>'
++'<h3>Rules</h3><ul><li>Never carbs alone · protein within 30 min of waking · carbs from whole grains/millets/legumes only · ≤40 g carbs/sitting · no sugary drinks · fibre every meal · yogurt at meal end (calcium vs iron) · Vit C with every iron source</li></ul>'
++'<h3>Breakfast options (7)</h3><ul><li>1 · Ragi overnight-oats power bowl + sesame + jaggery + amla + 2 eggs</li><li>2 · Pesarattu ×2 + egg bhurji + amla/guava</li><li>3 · Ragi idli ×3 + sambar + 2 eggs + amla juice</li><li>4 · Oats upma + spinach omelette + pumpkin seeds (luteal)</li><li>5 · Ragi kanji + sprouted moong + amla/tomato juice (menstruation, no egg)</li><li>6 · Tofu scramble + jowar dosa + nutritional yeast (festival)</li><li>7 · Boiled eggs + ragi ladoos ×2 + guava + almonds (quickest)</li></ul>'
++'<h3>Lunch options (7)</h3><ul><li>1 · Ragi sangati + palak pappu + drumstick sambar + egg (menstruation · Fe ~12 mg)</li><li>2 · Brown rice + gongura pappu + egg curry</li><li>3 · Jowar roti + rajma + spinach stir-fry (follicular)</li><li>4 · Bajra roti + chana dal + methi sabzi + pumpkin-seed raita (luteal)</li><li>5 · Brown rice + egg curry + beans palya + rasam</li><li>6 · Samai + moong dal + drumstick koora (ovulation)</li><li>7 · Full Telugu thali (Sunday)</li></ul>'
++'<h3>Dinner options (7)</h3><ul><li>1 · Jowar roti + methi dal + raita</li><li>2 · Egg curry + 2 rotis + tomato salad</li><li>3 · Millet khichdi + papad + yogurt</li><li>4 · Palak dal + brown rice + sesame chutney (menstruation)</li><li>5 · Tomato bath + boiled egg (follicular)</li><li>6 · Egg-veg stir-fry + 1 roti (luteal, lower carb)</li><li>7 · Samai pulao + rajma (festival)</li></ul>'
++'<h3>Morning drinks (on waking)</h3><ul><li>Everyday: warm lemon water · jeera water · methi water · amla juice</li><li>Menstruation: ajwain + ginger · Follicular: spearmint tea 2 cups · Luteal: ashwagandha (doctor first)</li></ul>'
++'<h3>Seed cycling</h3><ul><li>Menstruation + follicular: 1 tbsp flax + 1 tbsp pumpkin daily</li><li>Ovulation + luteal: 1 tbsp sesame + 1 tbsp sunflower daily</li><li>3+ cycles for effect — consistency over perfection</li></ul>'
++'<h3>Cycle phase adjustments</h3><ul><li><b>Menstruation:</b> max iron every meal + extra Vit C + warming (ajwain/ginger/jeera) + magnesium + flax · avoid salty/spicy/processed, caffeine, dairy-heavy</li><li><b>Follicular:</b> fresh lighter meals · spearmint 2 cups · sprouted + fermented foods · best phase for heavier strength</li><li><b>Ovulation:</b> anti-inflammatory (turmeric, ginger, flax, greens) · zinc · fibre · avoid sugar/refined carbs + alcohol</li><li><b>Luteal:</b> higher protein · magnesium daily · B6 · complex carbs only (ragi ladoo, roasted chana — not biscuits) · reduce salt + total carbs slightly (IR peaks) · ashwagandha</li></ul>'},
+life:{name:'Lifestyle Daily',html:'<div class="srcnote">Source: Lifestyle Plan — two morning variants; rest of day fixed</div>'
++'<h3>Schedule A — strength days (Mon/Wed/Fri)</h3><table><tr><th>Time</th><th>Block</th></tr><tr><td>9:00</td><td>Wake + lemon water · sunlight · light stretch</td></tr><tr><td>9:20</td><td>Light snack (½ oats + egg, or ladoo + almonds · ~150–200 kcal)</td></tr><tr><td>10:00</td><td>Strength 45–50 min (40-min gap after snack is safe)</td></tr><tr><td>10:55</td><td>Cool shower (hyperhidrosis)</td></tr><tr><td>11:20</td><td>FULL breakfast post-workout</td></tr><tr><td>12:00</td><td>Study / job prep — fed + post-exercise = peak focus</td></tr></table>'
++'<h3>Schedule B — yoga/walk days (Tue/Thu/Sat/Sun)</h3><table><tr><th>Time</th><th>Block</th></tr><tr><td>9:00</td><td>Wake + lemon water</td></tr><tr><td>9:20</td><td>Full breakfast</td></tr><tr><td>9:20–10:30</td><td>Eat, rest, digest (60–70 min gap)</td></tr><tr><td>10:30</td><td>Yoga / walk / dance 30–40 min</td></tr><tr><td>11:15</td><td>Light freshen up</td></tr><tr><td>11:30</td><td>Study / job prep (30 min bonus vs Sch A)</td></tr></table>'
++'<h3>Rest of every day</h3><table><tr><th>Time</th><th>Block</th></tr><tr><td>1:30 PM</td><td>Lunch — biggest meal · no tea/coffee 1 hr after</td></tr><tr><td>2:15</td><td>Hobby or short walk — pre-work anxiety buffer</td></tr><tr><td>2:45</td><td>Get ready · pack dinner · 4-7-8 breathing</td></tr><tr><td>3:00</td><td>Work · cold water bottle 2–3 L</td></tr><tr><td>5:30</td><td>Snack: roasted chana + dates + almonds / seeds</td></tr><tr><td>7:30</td><td>Dinner break (1 hr) · step outside · tulsi/chamomile after</td></tr><tr><td>8:30</td><td>Back to work · no caffeine from here</td></tr><tr><td>12:00–1:00 AM</td><td>Work ends (doc says 12; your stated hours 1 AM — wind-down compressed)</td></tr><tr><td>12:15</td><td>Optional seed snack (magnesium)</td></tr><tr><td>12:30</td><td>Wind-down: novel/painting · no screens</td></tr><tr><td>1:15</td><td>Diary brain-dump</td></tr><tr><td>1:45</td><td>Sleep · 7–8 hrs · cool room</td></tr></table>'
++'<h3>Weekly workout pattern</h3><ul><li>Mon lower · Tue restorative yoga · Wed upper+core · Thu walk · Fri full-body circuit · Sat dance/vinyasa · Sun rest</li><li>Never train fully fasted · avoid hot/humid · avoid HIIT (cortisol) · strength = primary IR intervention (4–6 wks to effect)</li></ul>'
++'<h3>Health pillars</h3><ul><li><b>Anemia:</b> iron + Vit C pairing always · ragi daily · gongura/methi/palak/curry leaves · cast-iron kadai · no tea/coffee ±1 hr of meals · ferritin every 3 months</li><li><b>Hyperhidrosis:</b> cool environment · lukewarm showers · cotton · aluminium chloride at night · anxiety is a trigger</li><li><b>Anxiety:</b> 4-7-8 pre-work · diary nightly · painting flow · consistent wake time · tulsi/chamomile at work · no doom-scrolling after 11</li><li><b>Supplements to discuss with doctor:</b> iron+C (per ferritin) · myo+D-chiro inositol 40:1 · D3 · magnesium glycinate · B12 · omega-3</li><li><b>Tests:</b> ferritin/serum iron/TIBC · fasting insulin + HbA1c · D3 + B12 · thyroid panel · AMH + Day-2/3 hormones yearly</li></ul>'},
+workout:{name:'Workout Month-1',html:'<div class="srcnote">Source: Month 1 Workout Plan — Reawaken → Foundation → Build → Full programme</div>'
++'<h3>Week 1 · Reawaken (15–25 min · 3/10 · no equipment)</h3><ul><li>Mon walk 20 + 4-7-8 · Tue mobility (cat-cow, child\u2019s pose, hip circles, ankle rolls) · Wed gentle yoga 20 · Thu walk 25 + calf raises · Fri full-body stretch · Sat longer walk 25 · Sun rest + diary</li><li>Rule: soreness that stops tomorrow\u2019s session = too hard. PCOS + anemia recovery is slower — feel energised after, not depleted.</li></ul>'
++'<h3>Week 2 · Foundation (25–35 min · 4/10 · bodyweight)</h3><ul><li>Mon lower (squats 3×10, bridge 3×12, calf 2×15, wall sit) · Tue yoga + Nadi Shodhana · Wed upper+core (wall push-up, dead bug, superman) · Thu walk 30 · Fri full body · Sat yin yoga · Sun rest</li><li>Rule: 3 s down, pause, 2 s up. Tempo is the training tool, not load.</li></ul>'
++'<h3>Week 3 · Build (35–45 min · 5–6/10 · loop band)</h3><ul><li>Mon lower+band (band squat, RDL, lateral walks, single-leg bridge) · Tue strength yoga · Wed upper+band (knee push-up, pull-apart, plank, band OHP) · Thu incline walk · Fri circuit ×3 · Sat restorative + yoga nidra · Sun rest</li><li>Buy loop band ₹200–400 · mild burn on last rep = target</li></ul>'
++'<h3>Week 4 · Full programme (40–50 min · 6–7/10 · 2–4 kg dumbbells)</h3><ul><li>Mon lower+DB (goblet squat, RDL, reverse lunge, band bridge, slow calf) · Tue full yoga · Wed upper+DB (push-up, seated press, bent-over row, plank, slow dead bug) · Thu power walk · Fri circuit wk4 · Sat flow + Nadi Shodhana · Sun rest + month review</li><li>Rule: start 2 kg — lighter than you think. Perfect form now = safe overload in Month 2.</li></ul>'},
+grocery:{name:'Grocery List',html:'<div class="srcnote">Source: Weekly Grocery List — 62 items · 7 categories · PCOS · anemia · veg+egg · Telugu</div>'
++'<h3>Grains &amp; millets (8)</h3><ul><li>Rolled oats 500 g · ragi flour 500 g · brown rice 1 kg · jowar 500 g · bajra 250 g · samai 250 g · atta 500 g · ragi-jaggery-sesame ladoo batch ×14 (Sunday prep)</li></ul>'
++'<h3>Lentils (7)</h3><ul><li>Toor 500 g · moong dal 250 g · green moong 250 g · chana dal 250 g · rajma 250 g · kala chana 250 g · masoor 250 g</li></ul>'
++'<h3>Produce (20)</h3><ul><li>Palak 400 g (buy twice — wilts) · methi 2 bunches · gongura · drumstick 4–5 · tomatoes 1 kg · onions · garlic · ginger · brinjal 2 · capsicum 2 · carrots 4 · cucumber 4 · beans 200 g · curry leaves · chillies · lemon 6–8 · guava 4–5 · apple/pear 4–5 · amla 6–8 · coconut ½</li></ul>'
++'<h3>Eggs &amp; dairy (3)</h3><ul><li>Eggs 18–21 · yogurt 1 L · ghee 100 g</li></ul>'
++'<h3>Seeds &amp; nuts (10)</h3><ul><li>Pumpkin 200 g · sesame 200 g · flax 150 g · sunflower 100 g · almonds 200 g · walnuts 100 g · roasted chana 300 g · groundnuts 200 g · jaggery 150 g · dates ~12</li></ul>'
++'<h3>Spices &amp; pantry (13)</h3><ul><li>Mustard · jeera · turmeric · coriander · chilli powder · ajwain · hing · pepper · tamarind · coconut/groundnut oil 500 ml · nutritional yeast · amla powder · urad dal</li></ul>'
++'<h3>Drinks &amp; herbs (7)</h3><ul><li>Spearmint 50 g · methi seeds 100 g · tulsi · chamomile · ashwagandha KSM-66 (doctor first) · amla juice 500 ml · green tea (max 1 cup, before 2 PM, not near meals)</li></ul>'
++'<h3>Prep notes</h3><ul><li>Sunday batch: ladoos ×14, boiled eggs ×6, sprouted moong, pesarattu batter · soak almonds + methi nightly · grind flax weekly (fridge) · cast-iron kadai for iron dishes · millets: Namdhari\u2019s, Ratnadeep, local kirana</li></ul>'},
+interview:{name:'Interview Prep',html:'<div class="srcnote">Source: integrated sprint (12-week Track 5 within 30-week plan) + Aug 2026 format research</div>'
++'<h3>Company timeline</h3><table><tr><th>Target</th><th>Sprint weeks</th><th>Format notes (verified Aug 2026)</th></tr><tr><td>Nvidia</td><td>9–10</td><td>NO AI tools allowed — disqualification risk. Pure DSA + depth (4–6 rounds).</td></tr><tr><td>Microsoft (Hyd/Blr)</td><td>11–12</td><td>AI-assisted rounds experimental (CoreAI/Copilot teams) — GitHub Copilot in VS Code. Ask recruiter; prep both modes.</td></tr><tr><td>Google</td><td>13–15</td><td>H2 2026 pilot: code-comprehension round with Gemini replaces one coding round · AI fluency evaluated (prompting, output validation, debugging) · G&amp;L round adds technical-design conversation on your prior work.</td></tr></table>'
++'<h3>Daily blocks (in schedule)</h3><ul><li>DSA (Java) 50 min daily — 1 new + 1 error-log redo · topic ladder: arrays → strings → hashmaps → lists → stacks → binary search → trees → graphs → heaps → greedy → DP → backtracking → tries → company sets</li><li>System Design 40 min (alt days): scale → caching → DBs → queues (Redis Streams!) → APIs → microservices → classic designs → RAG at scale → LLM routing → agentic design → mocks</li><li>GenAI track 40 min (alt days): agentic patterns · eval frameworks · serving infra</li><li>AI Fluency (wks 13–15): prompt drills · output validation · code review with AI</li><li>Saturday: mock interview (DSA ↔ design alternating) + behavioral STAR (Data Steward agent · Redis pipeline · multi-cloud routing)</li></ul>'
++'<h3>Checkpoints in schedule</h3><ul><li>Week 7: re-verify all formats · Week 10: pre-Microsoft Copilot check · Week 12: pre-Google code-comprehension confirmation</li></ul>'
++'<h3>Interview-week override</h3><ul><li>2 maintenance workouts · targeted company prep only · sleep by 12:30 AM · maintenance calories ±3 days around the loop</li></ul>'}
+};
+
+/* ---------- RENDER ---------- */
+let curWeek=0,curDay=0;
+const wkStart=w=>new Date(START.getTime()+w*6048e5);
+const fmt=d=>d.toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+function render(){
+  const s=wkStart(curWeek),e=new Date(s.getTime()+5184e5);
+  document.getElementById('wkLabel').textContent='Week '+(curWeek+1)+' · '+fmt(s)+' – '+fmt(e);
+  const ph=phaseOf(new Date(s.getTime()+3*864e5)),meta=PHASE_META[ph];
+  const pl=document.getElementById('phLabel');pl.textContent=meta[0];pl.className='ph '+meta[1];
+  const tabs=document.getElementById('dayTabs');tabs.innerHTML='';
+  for(let i=0;i<7;i++){const d=new Date(s.getTime()+i*864e5);
+    const b=document.createElement('button');b.className='daytab'+(i===curDay?' active':'');
+    const sched=(ph!=='p0'&&(i===0||i===2||i===4))?'A':(ph!=='p0'?'B':'');
+    b.innerHTML='<div class="d">'+DAYS[i]+'</div><div class="n">'+d.getDate()+'</div><div class="s">'+sched+'</div>';
+    b.onclick=()=>{curDay=i;render();};tabs.appendChild(b);}
+  const dt=new Date(s.getTime()+curDay*864e5),res=buildDay(dt);
+  document.getElementById('dayNote').innerHTML=res.note+'<br><span style="color:var(--drink)">Cycle: '+CYCNAME[cyc]+' — drink + seeds + meal picks follow it. Tap chips above to switch. · ☰ Plans = original docs.</span>';
+  const tl=document.getElementById('tl');tl.innerHTML='';
+  res.slots.forEach(pair=>{
+    const time=pair[0],card=pair[1];
+    const row=document.createElement('div');row.className='slot';
+    row.innerHTML='<div class="time">'+time+'</div><details class="card '+card.c+'"><summary><span class="t">'+card.t+'</span><span class="tag">'+card.c+'</span><span class="chev">›</span></summary><div class="detail">'+card.d+'</div></details>';
+    tl.appendChild(row);});
+}
+/* drawer */
+const dtabs=document.getElementById('dtabs'),dcontent=document.getElementById('dcontent');
+let curRef='skin';
+function renderDrawer(){
+  dtabs.innerHTML='';
+  Object.keys(REF).forEach(k=>{
+    const b=document.createElement('button');b.className='dtab'+(k===curRef?' active':'');
+    b.textContent=REF[k].name;b.onclick=()=>{curRef=k;renderDrawer();};dtabs.appendChild(b);});
+  dcontent.innerHTML=REF[curRef].html;dcontent.scrollTop=0;
+}
+document.getElementById('menuBtn').onclick=()=>{document.getElementById('drawer').classList.add('open');renderDrawer();};
+document.getElementById('closeD').onclick=()=>document.getElementById('drawer').classList.remove('open');
+document.querySelectorAll('.pchip').forEach(ch=>ch.onclick=()=>{
+  document.querySelectorAll('.pchip').forEach(c=>c.classList.remove('active'));
+  ch.classList.add('active');cyc=ch.dataset.p;render();});
+document.getElementById('prevW').onclick=()=>{if(curWeek>0){curWeek--;render();}};
+document.getElementById('nextW').onclick=()=>{if(curWeek<TOTAL_WEEKS-1){curWeek++;render();}};
+(()=>{const now=new Date();const diff=Math.floor((now-START)/864e5);
+if(diff>=0&&diff<TOTAL_WEEKS*7){curWeek=Math.floor(diff/7);curDay=diff%7;}})();
+render();
+</script>
+</body>
+</html>
