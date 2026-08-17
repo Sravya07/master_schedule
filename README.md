@@ -8,7 +8,7 @@ An interactive, integrated system spanning AWS certification, interview preparat
 
 ## 🚀 Quick Start
 
-**→ [Open the Interactive Schedule](Sravya_Interactive_Schedule_v3.html)** (works on any device, any browser)
+**→ [Open the Interactive Schedule](Sravya_Interactive_Schedule.html)** (works on any device, any browser)
 
 - **Click any day or time slot** to expand full details
 - **Tap the ☰ Plans menu** (top right) to reference original documents
