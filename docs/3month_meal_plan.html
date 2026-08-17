@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3-Month Personalised Meal Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;font-size:13px;color:#1a1a1a;background:#fff;padding:28px 32px;max-width:1100px;margin:0 auto}
+  h1{font-family:'DM Serif Display',serif;font-size:30px;font-weight:400;letter-spacing:-0.5px;margin-bottom:4px}
+  h2{font-family:'DM Serif Display',serif}
+  .print-btn{background:#1a1a1a;color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-bottom:22px}
+  .print-btn:hover{background:#333}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+  .leg{display:flex;align-items:center;gap:6px;font-size:11.5px;color:#555}
+  .leg-box{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+  @media print{
+    body{padding:14px 16px;font-size:11px}
+    .print-btn{display:none}
+    .month-section{page-break-before:auto}
+    .month-section+.month-section{page-break-before:always}
+    @page{margin:1.2cm;size:A4 landscape}
+    h1{font-size:22px}
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print / Save as PDF</button>
+
+<div style="border-bottom:2px solid #1a1a1a;padding-bottom:12px;margin-bottom:20px">
+  <h1>3-Month Personalised Meal Plan</h1>
+  <div style="font-size:12px;color:#666;margin-top:5px">
+    PCOS · Anemia (maintenance) · Palmoplantar hyperhidrosis · Anxiety · Telugu vegetarian + egg diet<br>
+    91 days · 1 iron-focus day/week · No upma · Soy milk · Ghee max 1 tsp/day · Cycle-aligned<br>
+    <span style="color:#3B2A68">Updated:</span> Brown rice only (basmati for biryani/fried rice) · Jowar roti / whole wheat chapathi only ·
+    +1 extra boiled egg daily at lunch · Sprouts + fruit + soaked nuts daily · Seed cycling + morning drink non-negotiable ·
+    26 rotating dish combos per meal-slot — no repeat within a month
+  </div>
+</div>
+
+<div style="background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:16px 20px;margin-bottom:28px">
+  <div style="font-size:13px;font-weight:700;color:#7A5C00;margin-bottom:4px">Morning drink reference — which drink, which cycle day</div>
+  <div style="font-size:11px;color:#555;margin-bottom:12px;line-height:1.6">
+    Assumes a 28-day cycle starting Day 1 of this plan = Day 1 of your period (see note below).
+    Adjust to whatever your tracking app actually shows — the logic below still applies, just shift the day numbers.
+  </div>
+  <table style="width:100%;border-collapse:collapse;font-size:11px">
+    <thead>
+      <tr style="background:#FEF3C7">
+        <th style="padding:6px 8px;text-align:left;border:1px solid #FDE68A;color:#7A5C00">Cycle day</th>
+        <th style="padding:6px 8px;text-align:left;border:1px solid #FDE68A;color:#7A5C00">Phase</th>
+        <th style="padding:6px 8px;text-align:left;border:1px solid #FDE68A;color:#7A5C00">Drink rule</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Day 1–5</td>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Menstruation</td>
+        <td style="padding:6px 8px;border:1px solid #FDE68A"><b>Ajwain + ginger water</b> — fixed every day of this window (cramp relief takes priority over rotation)</td>
+      </tr>
+      <tr style="background:#FFFDF5">
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Day 6–16</td>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Follicular + Ovulation</td>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Rotates through the 6-drink cycle below, one per day, in order</td>
+      </tr>
+      <tr>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Day 17–28</td>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Luteal</td>
+        <td style="padding:6px 8px;border:1px solid #FDE68A">Same 6-drink rotation, EXCEPT every 3rd day in this window is <b>Ashwagandha warm water</b> (in warm soy milk) instead — cortisol support for PMS</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-size:11px;font-weight:600;color:#7A5C00;margin-top:12px;margin-bottom:4px">The 6-drink rotation (used on all non-menstruation, non-ashwagandha days, repeating in this order):</div>
+  <div style="font-size:11px;color:#444;line-height:1.8">
+    1. Warm lemon water &nbsp;→&nbsp; 2. Jeera water &nbsp;→&nbsp; 3. Methi seed water &nbsp;→&nbsp;
+    4. Amla juice 30 ml (diluted) &nbsp;→&nbsp; 5. Spearmint tea &nbsp;→&nbsp; 6. Hibiscus tea &nbsp;→&nbsp; (repeats)
+  </div>
+  <div style="font-size:10.5px;color:#888;margin-top:10px;line-height:1.5">
+    Note: the rotation position is based on the day's place in the whole 91-day plan, not reset at the start of
+    each cycle — so which of the 6 drinks lands on a given calendar day can shift slightly cycle to cycle.
+    The phase rules (menstruation → ajwain-ginger, luteal → occasional ashwagandha) always take priority
+    over the rotation regardless of where it's up to.
+  </div>
+</div>
+
+<div style="background:#F9F8FF;border:1px solid #DDD9F5;border-radius:8px;padding:16px 20px;margin-bottom:28px">
+  <div style="font-size:13px;font-weight:700;color:#3B2A68;margin-bottom:10px">Daily rules — applies to every day in this plan</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:11px;color:#444;line-height:1.7">
+    <div>
+      <b style="color:#1a1a1a">Milk</b><br>
+      Soy milk (unsweetened, fortified) in all oats and porridges. No dairy milk.
+      Yogurt (3 tbsp per meal) is still used — it is not counted as dairy milk.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Ghee</b><br>
+      Maximum 1 tsp per day total. Used in lunch tadka only.
+      On ragi ladoo pre-workout days, no ghee is used elsewhere that day.
+      Dinners use ½ tsp cold-pressed groundnut oil instead.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Iron days</b><br>
+      Every Wednesday only. Marked 🔴. All other days: iron comes naturally from
+      background foods (dal, eggs, oats, seeds) — no deliberate stacking.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">No upma</b><br>
+      No oats upma, rava upma, semolina upma, or any upma variety appears
+      anywhere in this plan.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Grain — no millet instead of rice</b><br>
+      Lunch/dinner grain is Brown rice ¾ c by default. Millets (ragi sangati, samai rice,
+      bajra khichdi etc.) are never used as a rice substitute. Basmati rice is used only
+      for fried rice / biryani-style specials (Saturdays).
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Roti — two types only</b><br>
+      Dinner roti alternates between Jowar roti ×2 and Whole wheat chapathi ×2 only.
+      No bajra or other millet rotis anywhere in this plan.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">+1 boiled egg daily (now 2 at lunch)</b><br>
+      Lunch carries 2 boiled eggs — 1 extra on top of the original request, added after
+      a macro check showed the day running ~20-25g short of the 85-95g protein target.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Sprouts + fruit + nuts — snack, every day</b><br>
+      Snack cell always carries the day's sprout (weekly rotation), 1 low-GI fruit, and
+      6–8 soaked almonds + 3 soaked walnuts. Fruit pool: guava, apple, pear, fresh amla,
+      pomegranate, orange — all low-GI. Fruit changes weekly (not daily like the meals) and
+      is cycle-synced: guava every day during menstruation (highest Vit C, boosts iron
+      absorption when you need it most), rotating through the rest otherwise.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Seed cycling — cycle-based, breakfast</b><br>
+      Breakfast carries flaxseed + pumpkin seeds (menstruation/follicular/ovulation,
+      assumed cycle day 1–16) or sesame + sunflower seeds (luteal, day 17–28). Swap the
+      seed on any day to match whatever phase your tracking app actually shows.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Shared curry — less cooking</b><br>
+      Lunch and dinner use the SAME dal/curry, cooked once. Lunch = rice + curry + sabzi;
+      dinner = roti + same curry (reused) + salad. ~47% of days use soy chunks (nutrela)
+      instead of dal — much higher protein per gram of carb, which keeps macros in range
+      even with only one curry cooked per day.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Egg cap — 2-3 per day</b><br>
+      Total eggs shown in each day's header (e.g. "· 2 eggs"). Never exceeds 3. Soy-chunks
+      days use 2 eggs (soy already covers protein); dal days use 3 (dal is less protein-dense,
+      so the extra egg compensates).
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Morning drink — non-negotiable</b><br>
+      One drink on waking, every day — see the "Morning drink reference" table above for the
+      exact cycle-day → drink mapping and rotation order.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Variety — no repeat within a month</b><br>
+      26 unique breakfast / lunch / dinner combos each (repeat cycle ~26 days, never twice
+      in the same month). Pre-workout snack, iron-day breakfast, and Saturday basmati
+      specials each have 13 unique variants — one per occurrence, zero repeats in 3 months.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Schedule A days (Mon · Wed · Fri)</b><br>
+      Two breakfast entries: Pre-workout (9:20 am, shown in dashed box)
+      and Post-workout full meal (11:20 am, main cell).
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Schedule B days (Tue · Thu · Sat · Sun)</b><br>
+      One full breakfast at 9:20 am. Exercise at 10:30 am after digestion rest.
+      No pre-workout snack needed.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Spearmint tea</b><br>
+      Daily at 8:00 pm (replaces one herbal tea slot). Anti-androgenic for PCOS.
+      Additional herbal tea (tulsi or chamomile) is fine alongside.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Tea and coffee</b><br>
+      Minimum 30 minute gap after all meals (relaxed from 60 minutes since
+      iron levels are now improved). No caffeine after 8 pm.
+    </div>
+    <div>
+      <b style="color:#1a1a1a">Portion anchor</b><br>
+      ¾ c grain = approx 140 g cooked · ½ c dal = approx 120 g cooked
+      · Jowar roti / wheat chapathi ×2 medium = 60 g dry flour · Yogurt 3 tbsp = 45 g
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="leg"><div class="leg-box" style="background:#FFF8F8;border:1px solid #FCA5A5"></div>Iron focus day (Wednesday)</div>
+  <div class="leg"><div class="leg-box" style="background:#F9F8FF;border:1px solid #C4B5FD"></div>Schedule A day (strength)</div>
+  <div class="leg"><div class="leg-box" style="background:#F8FFF9;border:1px solid #86EFAC"></div>Schedule B day (yoga/walk)</div>
+  <div class="leg"><div class="leg-box" style="background:#FFFFF0;border:1px dashed #C0B040"></div>Pre-workout snack (A days only)</div>
+</div>
+
+
+<div class="month-section" style="margin-bottom:40px;page-break-before:auto">
+  <div style="background:#2A5741;color:white;padding:14px 20px;border-radius:10px 10px 0 0">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-0.3px">Month 1</div>
+    <div style="font-size:11px;opacity:.85;margin-top:3px">31 days · 1 iron-focus day/week (Wednesday) · Ghee max 1 tsp/day in lunch tadka only</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;border:1px solid #E0DDD8;border-top:none;font-family:inherit">
+    <thead>
+      <tr style="background:#EAF4EF">
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#2A5741;border-right:1px solid #E0DDD8;border-bottom:1px solid #D0CCC8">Day</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#2A5741;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Breakfast<br><span style="font-weight:400;color:#888">(Pre-workout for Sch A · Full meal for Sch B)</span></th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#2A5741;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Lunch · 1:30 pm</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#2A5741;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Dinner · 7:30 pm</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#2A5741;border-bottom:1px solid #D0CCC8">Snack · 5:30 pm</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 1<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Half cup overnight oats (soy milk) + 1 boiled egg</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + coconut chutney 2 tbsp + 1 scrambled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + broccoli stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-tomato salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 2<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + ginger chutney 2 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + toor dal (pappu) ½ c + cabbage stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + toor dal (pappu) ½ c (from lunch batch) + carrot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 3<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>1–2 ragi-sesame-jaggery ladoos</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi oats bowl: ½ c oats + 1 tbsp ragi powder + 1 tbsp sesame (soy milk) + 1 scrambled egg | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 4<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + sambar ½ c + coconut chutney 1 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + palak dal ½ c + bhindi fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + palak dal ½ c (from lunch batch) + beetroot-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 5<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Ragi porridge ½ cup (soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Overnight oats (soy milk) + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + onion-tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 6<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable oats bowl (soy milk) + 1-egg bhurji + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable biryani (basmati rice) ¾ c + gongura pappu (light oil) ½ c + carrot-beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + gongura pappu (light oil) ½ c (from lunch batch) + mixed sprouts salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 7<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar dosa ×2 + tomato chutney 2 tbsp + 1-egg omelette + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + brinjal curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 8<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Sprouted moong 2 tbsp + lemon squeeze</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Adai (mixed-lentil dosa) ×2 + avial side + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + moong dal ½ c + capsicum stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + moong dal ½ c (from lunch batch) + beetroot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 9<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Amla juice 30 ml (diluted)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal chilla ×2 + mint-coriander chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + cluster beans stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 10<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Roasted chana 2 tbsp + 4 soaked almonds</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + drumstick sambar ½ c + coconut chutney 1 tbsp + 1 boiled egg | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + chana dal tadka ½ c + drumstick curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal tadka ½ c (from lunch batch) + onion-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 11<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Uttapam (onion-tomato, ragi batter) ×1 + sambar ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + raw banana curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 12<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>½ cup ragi oats (soy milk) + 1 boiled egg</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Set dosa ×2 (fermented batter) + vegetable kurma ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + rajma curry ½ c + ridge gourd stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + rajma curry ½ c (from lunch batch) + tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 13<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Egg dosa ×1 (egg cooked into ragi dosa) + coconut chutney + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Lemon rice (basmati rice) ¾ c + ½ tsp groundnut oil tadka + soy chunks (nutrela) curry ¾ c + beetroot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-mint salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 14<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted moong + vegetable poha (brown rice poha) + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + masoor dal ½ c + cabbage-peas poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + masoor dal ½ c (from lunch batch) + beetroot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 15<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Amla juice 30 ml (diluted)</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Moong dal chilla ×1 (mini) + mint chutney</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Neer dosa ×3 + vegetable sagu ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + capsicum-onion stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 16<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + tomato-onion chutney + 1-egg bhurji + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + horsegram curry (ulavacharu) ½ c + bhindi-onion fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + horsegram curry (ulavacharu) ½ c (from lunch batch) + carrot-beans salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 17<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Banana (small, underripe) + 1 tbsp peanut butter</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 (moong dosa) + ginger chutney + 1 boiled egg | Amla juice 30 ml on the side + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower-peas stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + cucumber-tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 18<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable oats idli ×3 (steamed oats-ragi batter) + sambar + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + mixed vegetable sambar ½ c + carrot-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + mixed vegetable sambar ½ c (from lunch batch) + mixed sprouts-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 19<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>2 tbsp sprouted horsegram + lemon</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar uttapam ×1 + coconut chutney + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + drumstick-tomato sabzi ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + carrot-cucumber-lemon salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 20<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Masala oats (soy milk, mixed veg) + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown basmati vegetable fried rice ¾ c + methi dal ½ c + cluster beans-coconut stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + methi dal ½ c (from lunch batch) + cabbage salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 21<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal + spinach chilla ×2 + curd side + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + raw banana-curd curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + beetroot-carrot-lemon salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 22<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Handful puffed ragi/jowar + soy milk splash</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + tomato chutney + 1-egg bhurji + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + tomato pappu ½ c + capsicum-carrot stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + tomato pappu ½ c (from lunch batch) + cucumber-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 23<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + tomato pappu ½ c + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + ridge gourd-moong stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 24<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>1 boiled egg + roasted chana 1 tbsp</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + tomato-onion chutney + 1-egg bhurji | Amla juice 30 ml on the side + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + dosakaya (yellow cucumber) pappu ½ c + beetroot-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + dosakaya (yellow cucumber) pappu ½ c (from lunch batch) + cabbage-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 25<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Adai ×2 + coconut chutney + sprouted moong 2 tbsp + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + green moong dal ½ c + cabbage-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + green moong dal ½ c (from lunch batch) + tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 26<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Small bowl curd rice (¼ c brown rice) + pomegranate</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable dalia (broken wheat) bowl + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + chana dal + bottle gourd ½ c + brinjal-tomato curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal + bottle gourd ½ c (from lunch batch) + beetroot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 27<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Oats-moong dosa ×2 + coriander chutney + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Tomato bath (basmati rice) ¾ c + soy chunks (nutrela) curry ¾ c + broccoli stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-tomato salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 28<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar dosa ×2 + peanut chutney 2 tbsp + 1 scrambled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + toor dal (pappu) ½ c + cabbage stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + toor dal (pappu) ½ c (from lunch batch) + carrot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 29<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Oats-ragi energy bite ×2 (no added sugar)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + drumstick leaves (moringa) chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 30<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Overnight oats (soy milk) + sprouted moong 2 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + palak dal ½ c + bhindi fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + palak dal ½ c (from lunch batch) + beetroot-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 31<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Half cup overnight oats (soy milk) + 1 boiled egg</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi porridge (kanji) + sesame + 1 boiled egg + amla wedge | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + onion-tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+</tbody>
+  </table>
+</div>
+<div class="month-section" style="margin-bottom:40px;page-break-before:always">
+  <div style="background:#3B2A68;color:white;padding:14px 20px;border-radius:10px 10px 0 0">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-0.3px">Month 2</div>
+    <div style="font-size:11px;opacity:.85;margin-top:3px">30 days · 1 iron-focus day/week (Wednesday) · Ghee max 1 tsp/day in lunch tadka only</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;border:1px solid #E0DDD8;border-top:none;font-family:inherit">
+    <thead>
+      <tr style="background:#EDE8F8">
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#3B2A68;border-right:1px solid #E0DDD8;border-bottom:1px solid #D0CCC8">Day</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#3B2A68;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Breakfast<br><span style="font-weight:400;color:#888">(Pre-workout for Sch A · Full meal for Sch B)</span></th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#3B2A68;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Lunch · 1:30 pm</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#3B2A68;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Dinner · 7:30 pm</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#3B2A68;border-bottom:1px solid #D0CCC8">Snack · 5:30 pm</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 32<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + coconut chutney 2 tbsp + 1 scrambled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + gongura pappu (light oil) ½ c + carrot-beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + gongura pappu (light oil) ½ c (from lunch batch) + mixed sprouts salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 33<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>1–2 ragi-sesame-jaggery ladoos</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + ginger chutney 2 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + brinjal curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 34<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + sambar ½ c + coconut chutney 1 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable pulao (basmati rice) ¾ c + moong dal ½ c + capsicum stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + moong dal ½ c (from lunch batch) + beetroot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 35<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Overnight oats (soy milk) + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + cluster beans stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 36<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Ragi porridge ½ cup (soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable oats bowl (soy milk) + 1-egg bhurji + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + chana dal tadka ½ c + drumstick curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal tadka ½ c (from lunch batch) + onion-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 37<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar dosa ×2 + tomato chutney 2 tbsp + 1-egg omelette + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + raw banana curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 38<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Sprouted moong 2 tbsp + lemon squeeze</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted moong + ragi flour chilla ×2 + 1 boiled egg | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + rajma curry ½ c + ridge gourd stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + rajma curry ½ c (from lunch batch) + tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 39<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Amla juice 30 ml (diluted)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Adai (mixed-lentil dosa) ×2 + avial side + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + beetroot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-mint salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 40<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Roasted chana 2 tbsp + 4 soaked almonds</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal chilla ×2 + mint-coriander chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + masoor dal ½ c + cabbage-peas poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + masoor dal ½ c (from lunch batch) + beetroot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 41<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Uttapam (onion-tomato, ragi batter) ×1 + sambar ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Capsicum rice (basmati) ¾ c + roasted peanuts + soy chunks (nutrela) masala ¾ c + capsicum-onion stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 42<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Set dosa ×2 (fermented batter) + vegetable kurma ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + horsegram curry (ulavacharu) ½ c + bhindi-onion fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + horsegram curry (ulavacharu) ½ c (from lunch batch) + carrot-beans salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 43<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>½ cup ragi oats (soy milk) + 1 boiled egg</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Egg dosa ×1 (egg cooked into ragi dosa) + coconut chutney + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower-peas stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + cucumber-tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 44<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted moong + vegetable poha (brown rice poha) + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + mixed vegetable sambar ½ c + carrot-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + mixed vegetable sambar ½ c (from lunch batch) + mixed sprouts-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 45<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Moong dal chilla ×1 (mini) + mint chutney</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + sesame podi 1 tsp + 1 scrambled egg | Amla juice 30 ml on the side + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + drumstick-tomato sabzi ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + carrot-cucumber-lemon salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 46<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Neer dosa ×3 + vegetable sagu ½ c + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + methi dal ½ c + cluster beans-coconut stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + methi dal ½ c (from lunch batch) + cabbage salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 47<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Banana (small, underripe) + 1 tbsp peanut butter</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + tomato-onion chutney + 1-egg bhurji + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + raw banana-curd curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + beetroot-carrot-lemon salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 48<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable oats idli ×3 (steamed oats-ragi batter) + sambar + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Coconut rice (basmati) ¾ c + curry leaves tempering + tomato pappu ½ c + capsicum-carrot stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + tomato pappu ½ c (from lunch batch) + cucumber-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 49<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar uttapam ×1 + coconut chutney + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + ridge gourd-moong stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 50<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>2 tbsp sprouted horsegram + lemon</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Masala oats (soy milk, mixed veg) + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + dosakaya (yellow cucumber) pappu ½ c + beetroot-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + dosakaya (yellow cucumber) pappu ½ c (from lunch batch) + cabbage-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 51<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal + spinach chilla ×2 + curd side + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + green moong dal ½ c + cabbage-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + green moong dal ½ c (from lunch batch) + tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 52<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Handful puffed ragi/jowar + soy milk splash</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal + ragi adai ×2 + coconut chutney + 1 boiled egg | Amla juice 30 ml on the side + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + chana dal + bottle gourd ½ c + brinjal-tomato curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal + bottle gourd ½ c (from lunch batch) + beetroot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 53<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + tomato chutney + 1-egg bhurji + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + broccoli stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-tomato salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 54<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>1 boiled egg + roasted chana 1 tbsp</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + tomato pappu ½ c + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + toor dal (pappu) ½ c + cabbage stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + toor dal (pappu) ½ c (from lunch batch) + carrot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 55<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Adai ×2 + coconut chutney + sprouted moong 2 tbsp + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Mixed vegetable basmati khichdi ¾ c + soy chunks (nutrela) masala ¾ c + beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 56<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable dalia (broken wheat) bowl + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + palak dal ½ c + bhindi fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + palak dal ½ c (from lunch batch) + beetroot-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 apple + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 57<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Small bowl curd rice (¼ c brown rice) + pomegranate</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Oats-moong dosa ×2 + coriander chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + onion-tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 58<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar dosa ×2 + peanut chutney 2 tbsp + 1 scrambled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + gongura pappu (light oil) ½ c + carrot-beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + gongura pappu (light oil) ½ c (from lunch batch) + mixed sprouts salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 59<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Oats-ragi energy bite ×2 (no added sugar)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + methi leaves stir-fry side + 1 boiled egg | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + brinjal curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 60<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + drumstick leaves (moringa) chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + moong dal ½ c + capsicum stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + moong dal ½ c (from lunch batch) + beetroot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 61<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Half cup overnight oats (soy milk) + 1 boiled egg</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Overnight oats (soy milk) + sprouted moong 2 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + cluster beans stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+</tbody>
+  </table>
+</div>
+<div class="month-section" style="margin-bottom:40px;page-break-before:always">
+  <div style="background:#7A2F1A;color:white;padding:14px 20px;border-radius:10px 10px 0 0">
+    <div style="font-size:20px;font-weight:700;letter-spacing:-0.3px">Month 3</div>
+    <div style="font-size:11px;opacity:.85;margin-top:3px">30 days · 1 iron-focus day/week (Wednesday) · Ghee max 1 tsp/day in lunch tadka only</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;border:1px solid #E0DDD8;border-top:none;font-family:inherit">
+    <thead>
+      <tr style="background:#FAF0EC">
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#7A2F1A;border-right:1px solid #E0DDD8;border-bottom:1px solid #D0CCC8">Day</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#7A2F1A;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Breakfast<br><span style="font-weight:400;color:#888">(Pre-workout for Sch A · Full meal for Sch B)</span></th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#7A2F1A;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Lunch · 1:30 pm</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#7A2F1A;border-right:0.5px solid #D0CCC8;border-bottom:1px solid #D0CCC8">Dinner · 7:30 pm</th>
+        <th style="padding:8px 10px;text-align:left;font-size:10px;font-weight:600;color:#7A2F1A;border-bottom:1px solid #D0CCC8">Snack · 5:30 pm</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 62<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + coconut chutney 2 tbsp + 1 scrambled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Beetroot rice (basmati) ¾ c + chana dal tadka ½ c + drumstick curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal tadka ½ c (from lunch batch) + onion-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 63<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Amla juice 30 ml (diluted)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + ginger chutney 2 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + raw banana curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 pear + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 64<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>1–2 ragi-sesame-jaggery ladoos</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + sambar ½ c + coconut chutney 1 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + rajma curry ½ c + ridge gourd stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + rajma curry ½ c (from lunch batch) + tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 65<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Overnight oats (soy milk) + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + beetroot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-mint salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 66<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Ragi porridge ½ cup (soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi porridge (kanji) + roasted sesame + 1 boiled egg | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + masoor dal ½ c + cabbage-peas poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + masoor dal ½ c (from lunch batch) + beetroot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 67<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable oats bowl (soy milk) + 1-egg bhurji + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + capsicum-onion stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 68<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Sprouted moong 2 tbsp + lemon squeeze</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar dosa ×2 + tomato chutney 2 tbsp + 1-egg omelette + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + horsegram curry (ulavacharu) ½ c + bhindi-onion fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + horsegram curry (ulavacharu) ½ c (from lunch batch) + carrot-beans salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 69<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Amla juice 30 ml (diluted)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Adai (mixed-lentil dosa) ×2 + avial side + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Curd-free tamarind rice (basmati) ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower-peas stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + cucumber-tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 70<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal chilla ×2 + mint-coriander chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + mixed vegetable sambar ½ c + carrot-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + mixed vegetable sambar ½ c (from lunch batch) + mixed sprouts-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 fresh amla + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 71<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Roasted chana 2 tbsp + 4 soaked almonds</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Uttapam (onion-tomato, ragi batter) ×1 + sambar ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + drumstick-tomato sabzi ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + carrot-cucumber-lemon salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 72<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Set dosa ×2 (fermented batter) + vegetable kurma ½ c + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + methi dal ½ c + cluster beans-coconut stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + methi dal ½ c (from lunch batch) + cabbage salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 73<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>½ cup ragi oats (soy milk) + 1 boiled egg</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + ginger-garlic chutney + 1-egg bhurji | Amla juice 30 ml on the side + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + raw banana-curd curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + beetroot-carrot-lemon salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 74<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Egg dosa ×1 (egg cooked into ragi dosa) + coconut chutney + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + tomato pappu ½ c + capsicum-carrot stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + tomato pappu ½ c (from lunch batch) + cucumber-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 75<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Moong dal chilla ×1 (mini) + mint chutney</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted moong + vegetable poha (brown rice poha) + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + ridge gourd-moong stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 76<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Neer dosa ×3 + vegetable sagu ½ c + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Carrot-peas basmati pulao ¾ c + dosakaya (yellow cucumber) pappu ½ c + beetroot-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + dosakaya (yellow cucumber) pappu ½ c (from lunch batch) + cabbage-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 77<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + tomato-onion chutney + 1-egg bhurji + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + green moong dal ½ c + cabbage-carrot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + green moong dal ½ c (from lunch batch) + tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 pomegranate (1/2 cup arils) + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 78<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Banana (small, underripe) + 1 tbsp peanut butter</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable oats idli ×3 (steamed oats-ragi batter) + sambar + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + chana dal + bottle gourd ½ c + brinjal-tomato curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal + bottle gourd ½ c (from lunch batch) + beetroot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 79<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar uttapam ×1 + coconut chutney + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + broccoli stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-tomato salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 80<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Methi seed water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>2 tbsp sprouted horsegram + lemon</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + sambar ½ c + 1 boiled egg + amla wedge | Amla juice 30 ml on the side + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + toor dal (pappu) ½ c + cabbage stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + toor dal (pappu) ½ c (from lunch batch) + carrot-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 81<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Masala oats (soy milk, mixed veg) + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 82<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Spearmint tea</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Handful puffed ragi/jowar + soy milk splash</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Moong dal + spinach chilla ×2 + curd side + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + palak dal ½ c + bhindi fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + palak dal ½ c (from lunch batch) + beetroot-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 83<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Hibiscus tea</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Pesarattu ×2 + tomato chutney + 1-egg bhurji + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Methi basmati pulao ¾ c + soy chunks (nutrela) pulusu ¾ c + cauliflower stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + onion-tomato-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 84<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ashwagandha warm water (in warm soy milk)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi idli ×3 + tomato pappu ½ c + 1 boiled egg + Seed cycling: sesame seeds 1 tbsp + sunflower seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + gongura pappu (light oil) ½ c + carrot-beans poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + gongura pappu (light oil) ½ c (from lunch batch) + mixed sprouts salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 orange + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Mon · Day 85<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>1 boiled egg + roasted chana 1 tbsp</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Adai ×2 + coconut chutney + sprouted moong 2 tbsp + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + brinjal curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted green moong 2 tbsp (lemon + salt + cumin) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Tue · Day 86<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Vegetable dalia (broken wheat) bowl + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + moong dal ½ c + capsicum stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + moong dal ½ c (from lunch batch) + beetroot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted methi seeds 1 tsp (with yogurt) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#FFF8F8;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#991B1B">Wed · Day 87<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span> <span style="background:#FEE2E2;color:#991B1B;font-size:9px;padding:1px 5px;border-radius:6px;font-weight:600">IRON DAY</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Small bowl curd rice (¼ c brown rice) + pomegranate</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + coconut-sesame chutney + 1 scrambled egg | Amla juice 30 ml on the side + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) masala ¾ c + cluster beans stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) masala ¾ c (from lunch batch) + cabbage-carrot salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted kala chana 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Thu · Day 88<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Oats-moong dosa ×2 + coriander chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + chana dal tadka ½ c + drumstick curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + chana dal tadka ½ c (from lunch batch) + onion-cucumber salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted masoor dal 2 tbsp (raw, in salad) + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F9F8FF;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Fri · Day 89<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E8E4FF;color:#3730A3;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch A</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Ajwain + ginger water</div><div style="background:#FFFFF0;border:0.5px dashed #C0B040;border-radius:4px;padding:5px 8px;margin-bottom:5px;font-size:10px"><b style="color:#7A6010">Pre-workout (9:20am):</b><br>Oats-ragi energy bite ×2 (no added sugar)</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar dosa ×2 + peanut chutney 2 tbsp + 1 scrambled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) pulusu ¾ c + raw banana curry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) pulusu ¾ c (from lunch batch) + carrot salad with lemon ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted horsegram 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sat · Day 90<span style="font-size:9px;color:#888;font-weight:400"> · 3 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Warm lemon water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Ragi dosa ×2 + drumstick leaves (moringa) chutney + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Basmati vegetable fried rice ¾ c + boiled egg on top + rajma curry ½ c + ridge gourd stir-fry ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 2 boiled eggs</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Jowar roti ×2 + rajma curry ½ c (from lunch batch) + tomato-onion salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted cowpea (lobia) 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+<tr style="background:#F8FFF9;border-bottom:0.5px solid #E0DDD8">
+  <td style="padding:8px 10px;border-right:1px solid #E0DDD8;min-width:80px;vertical-align:top">
+    <div style="font-weight:600;font-size:12px;color:#2A5741">Sun · Day 91<span style="font-size:9px;color:#888;font-weight:400"> · 2 eggs</span></div>
+    <div style="margin-top:3px"><span style="background:#E4F9EC;color:#065F46;font-size:9px;padding:1px 5px;border-radius:5px;font-weight:600">Sch B</span></div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:9.5px;color:#7A6010;font-style:italic;margin-bottom:4px">Morning drink (on waking): Jeera water</div><div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Overnight oats (soy milk) + sprouted moong 2 tbsp + 1 boiled egg + Seed cycling: flaxseed 1 tbsp + pumpkin seeds 1 tbsp</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:210px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Brown rice ¾ c + soy chunks (nutrela) curry ¾ c + beetroot poriyal ½ c + yogurt 3 tbsp + 1 tsp ghee tadka + 1 boiled egg</div>
+  </td>
+  <td style="padding:8px 10px;border-right:0.5px solid #E8E5E0;vertical-align:top;max-width:180px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Whole wheat chapathi ×2 + soy chunks (nutrela) curry ¾ c (from lunch batch) + cucumber-mint salad ½ c + ½ tsp groundnut oil</div>
+  </td>
+  <td style="padding:8px 10px;vertical-align:top;min-width:100px">
+    <div style="font-size:10.5px;line-height:1.55;color:#1a1a1a">Sprouted groundnut 2 tbsp + 1 guava + 6–8 soaked almonds + 3 soaked walnuts (soaked overnight, peeled)</div>
+  </td>
+</tr>
+</tbody>
+  </table>
+</div>
+
+
+<div style="page-break-before:always;padding:20px 0">
+  <h2 style="font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:4px">How to align this plan with your menstrual cycle</h2>
+  <p style="font-size:11.5px;color:#555;margin-bottom:18px;line-height:1.6">
+    Because PCOS cycles are irregular (35–55+ days), you cannot pre-map phases to fixed calendar dates.
+    Use your tracking app (Clue or Flo) to identify which phase you are in each day, then apply
+    the tweaks below on top of that day's listed meals. The base meals stay the same — these are
+    targeted adjustments only.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+
+    <div style="background:#FEE2E2;border:0.5px solid #FCA5A5;border-radius:8px;padding:14px">
+      <div style="font-size:13px;font-weight:700;color:#991B1B;margin-bottom:6px">Phase 1 — Menstruation · Day 1–5</div>
+      <div style="font-size:11px;color:#7F1D1D;line-height:1.6;margin-bottom:8px">Blood + iron loss. Energy lower. Cramps. Digestion slows.</div>
+      <div style="font-size:11px;font-weight:600;color:#991B1B;margin-bottom:4px">Add to your listed meals:</div>
+      <ul style="font-size:11px;color:#7F1D1D;line-height:1.7;padding-left:14px">
+        <li>Squeeze extra lemon on every iron-containing meal</li>
+        <li>Add amla juice (30 ml) in the morning even on non-iron days</li>
+        <li>Swap the day's dinner grain for ragi roti if possible</li>
+        <li>Replace evening snack fruit with 1 guava (highest Vit C)</li>
+        <li>Drink ajwain + ginger water on waking instead of lemon water</li>
+        <li>Add 1 tbsp pumpkin seeds to breakfast for magnesium (cramp relief)</li>
+      </ul>
+      <div style="font-size:11px;font-weight:600;color:#991B1B;margin-top:8px;margin-bottom:4px">Avoid:</div>
+      <ul style="font-size:11px;color:#7F1D1D;line-height:1.7;padding-left:14px">
+        <li>Salty, very spicy food — worsens bloating</li>
+        <li>Caffeine — raises cortisol and worsens cramps</li>
+        <li>Large yogurt portions — calcium competes with iron when you most need it</li>
+      </ul>
+    </div>
+
+    <div style="background:#FEF3C7;border:0.5px solid #FCD34D;border-radius:8px;padding:14px">
+      <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:6px">Phase 2 — Follicular · Day 6–13</div>
+      <div style="font-size:11px;color:#78350F;line-height:1.6;margin-bottom:8px">Oestrogen rising. Energy + mood improve. Digestion strongest. Best phase for new things.</div>
+      <div style="font-size:11px;font-weight:600;color:#92400E;margin-bottom:4px">Add to your listed meals:</div>
+      <ul style="font-size:11px;color:#78350F;line-height:1.7;padding-left:14px">
+        <li>Switch morning drink to spearmint tea (2 cups/day) — anti-androgenic</li>
+        <li>Seed cycling: add 1 tbsp flaxseed + 1 tbsp pumpkin seeds to oats</li>
+        <li>On lunch days without cruciferous veg, add a small broccoli or cabbage stir-fry</li>
+        <li>Add tofu (80 g) to dinners where it is not already present 2–3×/week</li>
+        <li>Include fermented foods: idli/dosa on B days, extra yogurt 1 tbsp</li>
+      </ul>
+      <div style="font-size:11px;font-weight:600;color:#92400E;margin-top:8px;margin-bottom:4px">Best time for:</div>
+      <ul style="font-size:11px;color:#78350F;line-height:1.7;padding-left:14px">
+        <li>Heavier strength sessions — energy + recovery are at their peak</li>
+        <li>Trying any new meal from the list you have been putting off</li>
+      </ul>
+    </div>
+
+    <div style="background:#DCFCE7;border:0.5px solid #86EFAC;border-radius:8px;padding:14px">
+      <div style="font-size:13px;font-weight:700;color:#166534;margin-bottom:6px">Phase 3 — Ovulation · Day 14–16 (approx)</div>
+      <div style="font-size:11px;color:#14532D;line-height:1.6;margin-bottom:8px">Peak oestrogen. Highest energy + confidence. Short window 1–3 days. May be delayed with PCOS.</div>
+      <div style="font-size:11px;font-weight:600;color:#166534;margin-bottom:4px">Add to your listed meals:</div>
+      <ul style="font-size:11px;color:#14532D;line-height:1.7;padding-left:14px">
+        <li>Add turmeric + black pepper to every cooked dish this phase</li>
+        <li>Zinc focus: make sure pumpkin seeds and sesame are in today's oats</li>
+        <li>Add pomegranate or jamun (¼ c) to snack if in season</li>
+        <li>Increase raw salad portion at dinner from ½ c to 1 c — digestion is strongest</li>
+        <li>Fibre push: add 1 extra tbsp ground flaxseed to oats — clears excess oestrogen</li>
+      </ul>
+      <div style="font-size:11px;font-weight:600;color:#166534;margin-top:8px;margin-bottom:4px">Avoid:</div>
+      <ul style="font-size:11px;color:#14532D;line-height:1.7;padding-left:14px">
+        <li>Refined sugar or high-GI foods — can dampen LH surge quality in PCOS</li>
+        <li>Excessive caffeine — may interfere with LH surge timing</li>
+      </ul>
+    </div>
+
+    <div style="background:#EDE9FE;border:0.5px solid #C4B5FD;border-radius:8px;padding:14px">
+      <div style="font-size:13px;font-weight:700;color:#4C1D95;margin-bottom:6px">Phase 4 — Luteal · Day 17 onwards</div>
+      <div style="font-size:11px;color:#3B0764;line-height:1.6;margin-bottom:8px">Progesterone rises. Energy dips mid-phase. PMS: bloating, cravings, anxiety, mood swings. Longest phase.</div>
+      <div style="font-size:11px;font-weight:600;color:#4C1D95;margin-bottom:4px">Add to your listed meals:</div>
+      <ul style="font-size:11px;color:#3B0764;line-height:1.7;padding-left:14px">
+        <li>Seed cycling switch: 1 tbsp sesame + 1 tbsp sunflower seeds in oats instead of flax + pumpkin</li>
+        <li>Switch morning drink to ashwagandha warm water (¼ tsp KSM-66 in soy milk)</li>
+        <li>Add extra protein to breakfast: 2 eggs instead of 1 on A pre-workout days</li>
+        <li>Increase magnesium: add 1 extra tbsp pumpkin seeds to the listed snack</li>
+        <li>B6 focus: make sure eggs are in at least 2 meals daily (B6 for PMS mood)</li>
+      </ul>
+      <div style="font-size:11px;font-weight:600;color:#4C1D95;margin-top:8px;margin-bottom:4px">Reduce in this phase:</div>
+      <ul style="font-size:11px;color:#3B0764;line-height:1.7;padding-left:14px">
+        <li>Salt in all dishes — worsens bloating dramatically</li>
+        <li>Total carbs slightly — insulin resistance peaks in luteal phase for PCOS</li>
+        <li>Sugar cravings: replace with ragi ladoo or dates + nuts, not sweets</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background:#F7F6F3;border:0.5px solid #E0DDD8;border-radius:8px;padding:14px">
+    <div style="font-size:12px;font-weight:700;color:#1a1a1a;margin-bottom:8px">Seed cycling quick reference</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:11.5px;color:#444;line-height:1.7">
+      <div><b>Follicular + Ovulation (Phase 1 + 2):</b><br>1 tbsp ground flaxseed + 1 tbsp pumpkin seeds in oats daily<br><span style="color:#888">Supports oestrogen metabolism</span></div>
+      <div><b>Luteal (Phase 3 + 4):</b><br>1 tbsp sesame seeds + 1 tbsp sunflower seeds in oats daily<br><span style="color:#888">Supports progesterone production</span></div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:#777">Takes 3+ consistent cycles to notice an effect. Track which phase you are in with your app. Switch seeds when your app shows phase change.</div>
+  </div>
+</div>
+
+<div style="margin-top:30px;padding-top:16px;border-top:1px solid #E0DDD8;font-size:10.5px;color:#888;text-align:center;line-height:1.7">
+  Personalised meal plan · PCOS + iron maintenance diet · Telugu vegetarian + egg ·
+  Always consult your doctor before making significant dietary changes ·
+  Recheck ferritin every 3 months for the first year post-stabilisation
+</div>
+
+</body>
+</html>
